@@ -146,7 +146,7 @@
 
 .page-list .list .level.level-top button {
     background: linear-gradient(90deg,rgba(214, 153, 255, 0.25) 0%, rgba(190, 87, 199, 0.25) 70%);
-    color: var(--color-on-primary);
+    color: var(--color-on-background);
 }
 .page-list .list .level.level-top.active button {
     background: var(--color-primary);
@@ -155,7 +155,7 @@
 
 .page-list .list .level.level-featured button {
     background: linear-gradient(90deg,rgba(228, 191, 255, 0.25) 0%, rgba(226, 158, 232, 0.25) 70%);
-    color: var(--color-on-primary);
+    color: var(--color-on-background);
 }
 .page-list .list .level.level-featured.active button {
     background: var(--color-primary);
@@ -164,7 +164,7 @@
 
 .page-list .list .level.level-angel button {
     background: linear-gradient(90deg,rgba(0, 183, 255, 0.25) 0%, rgba(255, 191, 250, 0.25) 20%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 191, 250, 0.25) 75%, rgba(0, 183, 255, 0.25) 100%);
-    color: var(--color-on-primary);
+    color: var(--color-on-background);
 }
 .page-list .list .level.level-angel.active button {
     background: var(--color-primary);
