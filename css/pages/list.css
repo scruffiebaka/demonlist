@@ -145,7 +145,7 @@
 }
 
 .page-list .list .level.level-top button {
-    background: linear-gradient(90deg,rgba(214, 153, 255, 0.25) 0%, rgba(190, 87, 199, 0.25) 70%);
+    background: linear-gradient(90deg,rgba(219, 156, 255, 1) 0%, rgba(157, 0, 255, 1) 85%);
     color: var(--color-on-background);
 }
 .page-list .list .level.level-top.active button {
