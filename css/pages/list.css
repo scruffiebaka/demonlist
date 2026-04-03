@@ -145,7 +145,7 @@
 }
 
 .page-list .list .level.level-top button {
-    background-color: rgba(122, 182, 245, 0.6);
+    background-color: rgba(122, 182, 245, 0.1);
     color: #000;
 }
 .page-list .list .level.level-top.active button {
@@ -154,7 +154,7 @@
 }
 
 .page-list .list .level.level-featured button {
-    background-color: rgba(126, 147, 242, 0.6);
+    background-color: rgba(126, 147, 242, 0.1);
     color: #000;
 }
 .page-list .list .level.level-featured.active button {
@@ -163,7 +163,7 @@
 }
 
 .page-list .list .level.level-angel button {
-    background-color: rgba(252, 83, 143, 0.6);
+    background-color: rgba(252, 83, 143, 0.1);
     color: #000;
 }
 .page-list .list .level.level-angel.active button {
