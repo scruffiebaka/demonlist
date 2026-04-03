@@ -25,7 +25,7 @@ export default {
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
-                            <p v-if="i + 1 <= 150" class="type-label-lg">#{{ i + 1 }}</p>
+                            <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
                         <td 
@@ -58,11 +58,11 @@ export default {
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points granted</div>
-                            <p>{{ score(selected + 1, 100, 100) }}</p>
+                            <p>{{ score(selected + 1, 100) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <p class="type-label-lg link" @click="copyText(level.id)">{{ level.id }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Length</div>
@@ -84,7 +84,7 @@ export default {
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
                             </td>
                             <td class="hz">
-                                <p>{{ record.hz }}Hz</p>
+                                <p>{{ record.hz === 0 ? 'NA' : record.hz + 'Hz' }}</p>
                             </td>
                         </tr>
                     </table>
@@ -98,9 +98,15 @@ export default {
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-                    <div class="og">
-                        <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
-                    </div>
+                    <h3>About</h3>
+                    <p>
+                        This is the official list for the New Angel's Republic Discord Server.
+                        The website is a modified version of TSL template. 
+                    </p>
+                    <p>
+                        Levels highlighted in light pink are Featured, dark purple are Top Featured, and special colored are awarded the Angel Award.
+                        Have fun! :3
+                    </p>
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
@@ -133,6 +139,41 @@ export default {
                     <p>
                         Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level
                     </p>
+                    <p>
+                        If you are to use a camera recording instead of a screen recording, please ensure that it is high quality, 30fps minimum, and that the Geometry Dash window covers a minimum of half of the height of the window on both sides and half of the width of the window on top and bottom.
+                    </p>
+                    <h3>Level Creation Rules</h3>
+                    <p>
+                        Levels must be made specifically for the NARLL.
+                    </p>
+                    <p>
+                        Updates are generally only allowed for bugfixes.
+                    </p>
+                    <p>
+                        There is a minimum quality baseline. Your level might be rejected if we don't deem it good enough. How do we decide? ITS ALL SUBJECTIVE
+                    </p>
+                    <p>
+                        Obviously, no NSFW art or anything that would violate the NAR Discord rules.
+                    </p>
+                    <p>
+                        Levels must be made possible for any framerate above 60FPS
+                    </p>
+                    <h3>Gameplay Restrictions</h3>
+                    <p>
+                        Spam of ≥12 CPS in any stint of 3+ inputs
+                    </p>
+                    <p>
+                        Minigames.
+                    </p>
+                    <p>
+                        Random/pseudorandom triggers that affect visual and/or GP clarity
+                    </p>
+                    <h3>Gameplay Restrictions</h3>
+                    <p>
+                        The NARLL Website is in beta, so expect some stuff to be unfinished or bugged.
+                    </p>
+                    <p>
+                        Want the old spreadsheet version of the list? Here: 
                 </div>
             </div>
         </main>
@@ -188,7 +229,12 @@ export default {
         this.loading = false;
     },
     methods: {
-        embed,
-        score,
+            embed,
+            score,
+            copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`Copied ID: ${text}`);
+            });
+        },
     },
 };
