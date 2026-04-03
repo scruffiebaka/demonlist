@@ -64,6 +64,10 @@
     align-items: flex-end;
     gap: 0.25rem;
 }
+.page-list .level-container .level .tags .type-title-sm {
+    font-size: 20px;
+    line-height: 28px;
+}
 .page-list .level-container .level .level-authors {
     display: grid;
     grid-template-columns: max-content 1fr;
