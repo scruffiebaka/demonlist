@@ -145,29 +145,29 @@
 }
 
 .page-list .list .level.level-top button {
-    background-color: rgba(122, 182, 245, 0.1);
-    color: #000;
+    background: linear-gradient(90deg,rgba(214, 153, 255, 0.25) 0%, rgba(190, 87, 199, 0.25) 70%);
+    color: var(--color-on-primary);
 }
 .page-list .list .level.level-top.active button {
-    background-color: var(--color-primary);
+    background: var(--color-primary);
     color: var(--color-on-primary);
 }
 
 .page-list .list .level.level-featured button {
-    background-color: rgba(126, 147, 242, 0.1);
-    color: #000;
+    background: linear-gradient(90deg,rgba(228, 191, 255, 0.25) 0%, rgba(226, 158, 232, 0.25) 70%);
+    color: var(--color-on-primary);
 }
 .page-list .list .level.level-featured.active button {
-    background-color: var(--color-primary);
+    background: var(--color-primary);
     color: var(--color-on-primary);
 }
 
 .page-list .list .level.level-angel button {
-    background-color: rgba(252, 83, 143, 0.1);
-    color: #000;
+    background: linear-gradient(90deg,rgba(0, 183, 255, 0.25) 0%, rgba(255, 191, 250, 0.25) 20%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 191, 250, 0.25) 75%, rgba(0, 183, 255, 0.25) 100%);
+    color: var(--color-on-primary);
 }
 .page-list .list .level.level-angel.active button {
-    background-color: var(--color-primary);
+    background: var(--color-primary);
     color: var(--color-on-primary);
 }
 
