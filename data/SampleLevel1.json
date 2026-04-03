@@ -5,6 +5,7 @@
     "creators": ["Creator1", "Creator2", "Creator3"],
     "verifier": "Verifier",
     "verification": "https://www.youtube.com/watch?v=ISTl28wKSXc",
+    "featured": "featured",
     "percentToQualify": 56,
     "password": "Not Copyable",
     "records": [

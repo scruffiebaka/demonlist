@@ -143,3 +143,18 @@
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
 }
+
+.page-list .list .level.level-top button {
+    background-color: #7ab6f5;
+    color: #000;
+}
+
+.page-list .list .level.level-featured button {
+    background-color: #7e93f2;
+    color: #000;
+}
+
+.page-list .list .level.level-angel button {
+    background-color: #fc538f;
+    color: #000;
+}
