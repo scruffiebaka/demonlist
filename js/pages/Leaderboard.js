@@ -33,17 +33,7 @@ export default {
                             <td class="total">
                                 <p class="type-label-lg">{{ localize(ientry.total) }}</p>
                             </td>
-                            <td
-                                class="level" 
-                                :class="[
-                                    { 'active': selected == i, 'error': !level },
-                                    {
-                                    'level-top': level?.featured === 'top',
-                                    'level-featured': level?.featured === 'featured',
-                                    'level-angel': level?.featured === 'award'
-                                    }
-                                ]"
-                            >
+                            <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
                                     <span class="type-label-lg">{{ ientry.user }}</span>
                                 </button>
