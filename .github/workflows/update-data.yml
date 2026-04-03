@@ -1,0 +1,36 @@
+name: Update Data
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0
+
+      - name: Restore dependencies
+        run: dotnet restore NARLLGenerator/NARLLGenerator.csproj
+
+      - name: Run data generator
+        run: dotnet run --project NARLLGenerator/NARLLGenerator.csproj
+
+      - name: Commit & push updated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Auto-update data"
+          git push
