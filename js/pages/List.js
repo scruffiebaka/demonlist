@@ -35,7 +35,7 @@ export default {
                                 {
                                 'level-top': level?.featured === 'top',
                                 'level-featured': level?.featured === 'featured',
-                                'level-angel': level?.featured === 'angel award'
+                                'level-angel': level?.featured === 'award'
                                 }
                             ]"
                         >
