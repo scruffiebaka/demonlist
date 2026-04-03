@@ -148,20 +148,27 @@
     background-color: #7ab6f5;
     color: #000;
 }
+.page-list .list .level.level-top.active button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
 
 .page-list .list .level.level-featured button {
     background-color: #7e93f2;
     color: #000;
+}
+.page-list .list .level.level-top.featured button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
 }
 
 .page-list .list .level.level-angel button {
     background-color: #fc538f;
     color: #000;
 }
-
-.page-list .list .level.active button {
-    outline: 2px solid var(--color-primary);
-    background-color: inherit;
+.page-list .list .level.level-angel.active button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
