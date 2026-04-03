@@ -158,3 +158,10 @@
     background-color: #fc538f;
     color: #000;
 }
+
+.page-list .list .level.active button {
+    outline: 2px solid var(--color-primary);
+    background-color: inherit;
+}
+
+/* scruffie: bruh i have no idea what im doing idek if this works bru" */
