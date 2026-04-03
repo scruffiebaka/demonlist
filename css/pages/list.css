@@ -55,12 +55,14 @@
 .page-list .level-container .level h1{
     padding-right: 5rem;
 }
-.page-list .level-container .level .tags{
+.page-list .level-container .level .tags {
     position: absolute;
     top: 1rem;
     right: 1rem;
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
 }
 .page-list .level-container .level .level-authors {
     display: grid;

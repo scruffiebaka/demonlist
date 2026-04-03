@@ -39,9 +39,10 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-    		    <div class="tags" v-if="level.tags">
-                    	<span class="tag">{{ level.tags }}</span>
-    		    </div>
+                    <div class="tags" v-if="level.tags">
+                        <div class="type-title-sm">Tags</div>
+                        <p>{{ level.tags || NA }}</p>
+                    </div>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
@@ -79,7 +80,7 @@ export default {
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                    <p>An error occured.</p>
                 </div>
             </div>
             <div class="meta-container">
