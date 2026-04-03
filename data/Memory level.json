@@ -1,0 +1,39 @@
+{
+  "id": 133536685,
+  "length": "NA",
+  "name": "Memory level",
+  "author": "aqrlr\n",
+  "tags": "NA",
+  "notes": "",
+  "creators": [
+    "aqrlr\n"
+  ],
+  "verifier": "aqrlr\n",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
+  "records": [
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "vex",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "blooddrop",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

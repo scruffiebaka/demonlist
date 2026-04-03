@@ -1,0 +1,33 @@
+{
+  "id": 134967058,
+  "length": "0:24",
+  "name": "wisteria",
+  "author": "wattiwatt",
+  "tags": "Ship",
+  "notes": "",
+  "creators": [
+    "wattiwatt"
+  ],
+  "verifier": "mold",
+  "verification": "https://youtu.be/X8GHl2rLQvM",
+  "records": [
+    {
+      "user": "JohnHuman",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Cala",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

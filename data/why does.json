@@ -1,0 +1,33 @@
+{
+  "id": 133195834,
+  "length": "0:15",
+  "name": "why does",
+  "author": "sznapis",
+  "tags": "Chokepoints, Unbalanced",
+  "notes": "",
+  "creators": [
+    "sznapis"
+  ],
+  "verifier": "vex",
+  "verification": "https://youtu.be/JK5DFRC65nc",
+  "records": [
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "cookie",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

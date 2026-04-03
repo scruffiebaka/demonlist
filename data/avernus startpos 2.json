@@ -1,0 +1,57 @@
+{
+  "id": 135094808,
+  "length": "0:10",
+  "name": "avernus startpos 2",
+  "author": "vex",
+  "tags": "Sync but its offset by 1 second",
+  "notes": "",
+  "creators": [
+    "vex"
+  ],
+  "verifier": "vex",
+  "verification": "https://youtu.be/QUSP7uv3O0c",
+  "records": [
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "detempt",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Gaseba",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "ash8",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "shittydruki",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

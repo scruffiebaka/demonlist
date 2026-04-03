@@ -1,0 +1,33 @@
+{
+  "id": 132587918,
+  "length": "0:22",
+  "name": "cookie challenge",
+  "author": "sznapis",
+  "tags": "All-around",
+  "notes": "",
+  "creators": [
+    "sznapis"
+  ],
+  "verifier": "cookie",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
+  "records": [
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

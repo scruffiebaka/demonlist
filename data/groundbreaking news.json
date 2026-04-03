@@ -1,0 +1,39 @@
+{
+  "id": 132557806,
+  "length": "0:08",
+  "name": "groundbreaking news",
+  "author": "aqrlr",
+  "tags": "Memory",
+  "notes": "",
+  "creators": [
+    "aqrlr"
+  ],
+  "verifier": "aqrlr",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
+  "records": [
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "ash8",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

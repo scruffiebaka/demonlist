@@ -1,0 +1,27 @@
+{
+  "id": 135886078,
+  "length": "NA",
+  "name": "the sog files",
+  "author": "itsGalaxie",
+  "tags": "NA",
+  "notes": "\u003C\u003C move up?",
+  "creators": [
+    "itsGalaxie"
+  ],
+  "verifier": "itsGalaxie",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
+  "records": [
+    {
+      "user": "vex",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": 133967760,
+  "length": "0:20",
+  "name": "slauherhuse",
+  "author": "itsGalaxie",
+  "tags": "Wave, icedcave cube",
+  "notes": "",
+  "creators": [
+    "itsGalaxie"
+  ],
+  "verifier": "vex",
+  "verification": "https://youtu.be/SK1SqAAAd0w",
+  "records": [
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "ash8",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
+}
