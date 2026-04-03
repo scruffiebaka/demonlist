@@ -145,7 +145,7 @@
 }
 
 .page-list .list .level.level-top button {
-    background-color: #7ab6f5;
+    background-color: rgba(122, 182, 245, 0.6);
     color: #000;
 }
 .page-list .list .level.level-top.active button {
@@ -154,16 +154,16 @@
 }
 
 .page-list .list .level.level-featured button {
-    background-color: #7e93f2;
+    background-color: rgba(126, 147, 242, 0.6);
     color: #000;
 }
-.page-list .list .level.level-top.featured button {
+.page-list .list .level.level-featured.active button {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
 }
 
 .page-list .list .level.level-angel button {
-    background-color: #fc538f;
+    background-color: rgba(252, 83, 143, 0.6);
     color: #000;
 }
 .page-list .list .level.level-angel.active button {
