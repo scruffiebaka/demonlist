@@ -39,6 +39,9 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
+    		    <div class="tags" v-if="level.tags">
+                    	<span class="tag">{{ level.tags }}</span>
+    		    </div>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
@@ -55,7 +58,7 @@ export default {
                             <p>{{ level.length }}</p>
                         </li>
                     </ul>
-                    <p>Notes: </p>
+                    <p>Notes: {{ level.notes }}</p>
                     <h2>Records</h2>
                     <p v-if="selected + 1 > 50">This level does not accept new records.</p>
                     <table class="records">

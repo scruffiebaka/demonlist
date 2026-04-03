@@ -45,11 +45,22 @@
     color: var(--color-on-primary);
 }
 .page-list .level-container .level {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding-right: 2rem;
     max-width: 48rem;
+}
+.page-list .level-container .level h1{
+    padding-right: 5rem;
+}
+.page-list .level-container .level .tags{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }
 .page-list .level-container .level .level-authors {
     display: grid;
