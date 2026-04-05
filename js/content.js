@@ -125,7 +125,7 @@ export async function fetchLeaderboard() {
 
 export async function fetchPacks() {
     try {
-        const res = await fetch('/dataextra/packs.json');
+        const res = await fetch('/dataextras/packs.json');
         return await res.json();
     } catch {
         return null;
