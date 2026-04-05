@@ -1,21 +1,22 @@
+.page-packs-container {
+    display: block;
+}
+
 .page-packs {
-    height: 100vh;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1.5fr 3fr 2fr;
+    grid-template-columns: minmax(16rem, 1.5fr) 3fr 2fr;
     column-gap: 2rem;
     max-width: 90rem;
     margin: 0 auto;
 }
 
 .page-packs > div {
-    height: 100%;
+    overflow-y: auto;
     padding-block: 2rem;
+    min-height: 0;
 }
 
-.page-packs .level-container {
-    display: flex;
-}
-
-.page-packs .level {
-    flex: 1;
+html, body, #app {
+    height: 100%;
 }

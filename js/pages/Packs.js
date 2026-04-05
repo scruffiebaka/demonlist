@@ -1,17 +1,16 @@
-import { fetchList, fetchPacks } from '../content.js';
-import Spinner from '../components/Spinner.js';
-import LevelAuthors from '../components/List/LevelAuthors.js';
-import { embed } from '../util.js';
+import { fetchPacks } from "../content.js";
+
+import Spinner from "../components/Spinner.js";
 
 export default {
-    components: { Spinner, LevelAuthors },
+    components: { Spinner },
 
     data: () => ({
-        list: [],
         packs: [],
-        loading: true,
         selectedPack: 0,
-        selectedLevel: 0
+        selectedLevel: 0,
+        loading: true,
+        err: null
     }),
 
     template: `
@@ -19,77 +18,78 @@ export default {
             <Spinner></Spinner>
         </main>
 
-        <main v-else class="page-list page-packs">
-            
-            <!-- LEFT: PACKS -->
-            <div class="packs-container">
-                <table class="list">
-                    <tr v-for="(p, i) in packs">
-                        <td class="level" :class="{ active: selectedPack === i }">
-                            <button @click="selectPack(i)">
-                                <span class="type-label-lg">{{ p.name }}</span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <main v-else class="page-packs-container">
+            <div class="page-packs">
 
-            <!-- MIDDLE: LEVEL INFO -->
-            <div class="level-container">
-                <div class="level" v-if="level">
-                    <h1>{{ level.name }}</h1>
-                    <LevelAuthors 
-                        :author="level.author" 
-                        :creators="level.creators" 
-                        :verifier="level.verifier"
-                    ></LevelAuthors>
-
-                    <iframe class="video" :src="embed(level.verification)"></iframe>
+                <div class="packs-container">
+                    <table class="list">
+                        <tr v-for="(pack, i) in packs">
+                            <td class="level" :class="{ active: selectedPack === i }">
+                                <button @click="selectPack(i)">
+                                    <span class="type-label-lg">{{ pack.name }}</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
 
-            <!-- RIGHT: LEVELS -->
-            <div class="list-container">
-                <table class="list">
-                    <tr v-for="([level, err], i) in filteredLevels">
-                        <td class="level" :class="{ active: selectedLevel === i }">
-                            <button @click="selectedLevel = i">
-                                <span class="type-label-lg">{{ level.name }}</span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+                <div class="level-container">
+                    <div class="level" v-if="level">
+                        <h1>{{ level.name }}</h1>
 
+                        <p><b>CREATORS</b> {{ level.creators }}</p>
+                        <p><b>VERIFIER</b> {{ level.verifier }}</p>
+                        <p><b>PUBLISHER</b> {{ level.publisher }}</p>
+
+                        <iframe class="video" :src="level.video" frameborder="0"></iframe>
+                    </div>
+
+                    <div v-else class="level">
+                        <p>No level selected.</p>
+                    </div>
+                </div>
+
+                <div class="levels-container">
+                    <table class="list">
+                        <tr v-for="(lvl, i) in currentPack.levels">
+                            <td class="level" :class="{ active: selectedLevel === i }">
+                                <button @click="selectedLevel = i">
+                                    <span class="type-label-lg">{{ lvl.name }}</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
         </main>
     `,
 
     computed: {
-        filteredLevels() {
-            const pack = this.packs[this.selectedPack];
-            if (!pack) return [];
-
-            return this.list.filter(([lvl]) =>
-                pack.levels.includes(lvl?.name)
-            );
+        currentPack() {
+            return this.packs[this.selectedPack] || { levels: [] };
         },
-
         level() {
-            return this.filteredLevels[this.selectedLevel]?.[0];
+            return this.currentPack.levels[this.selectedLevel];
         }
     },
 
-    async mounted() {
-        this.list = await fetchList();
-        this.packs = await fetchPacks();
-        this.loading = false;
-    },
-
     methods: {
-        embed,
         selectPack(i) {
             this.selectedPack = i;
             this.selectedLevel = 0;
         }
+    },
+
+    async mounted() {
+        const packs = await fetchPacks();
+
+        if (!packs) {
+            this.err = "Failed to load packs.";
+        } else {
+            this.packs = packs;
+        }
+
+        this.loading = false;
     }
 };
