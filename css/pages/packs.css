@@ -1,0 +1,13 @@
+.page-packs {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 2fr;
+    column-gap: 2rem;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.page-packs > div {
+    overflow-y: auto;
+    padding-block: 2rem;
+}

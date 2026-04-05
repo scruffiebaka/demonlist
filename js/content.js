@@ -122,3 +122,12 @@ export async function fetchLeaderboard() {
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
 }
+
+export async function fetchPacks() {
+    try {
+        const res = await fetch('/dataextra/packs.json');
+        return await res.json();
+    } catch {
+        return null;
+    }
+}
