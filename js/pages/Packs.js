@@ -19,7 +19,7 @@ export default {
             <Spinner></Spinner>
         </main>
 
-        <main v-else class="page-packs">
+        <main v-else class="page-list page-packs">
             
             <!-- LEFT: PACKS -->
             <div class="packs-container">
