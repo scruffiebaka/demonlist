@@ -34,7 +34,7 @@ body {
     margin: 0;
 }
 
-header,
+/* REMOVE header from grid system */
 main {
     background-color: var(--color-background);
     color: var(--color-on-background);
@@ -43,49 +43,41 @@ main {
     column-gap: 2rem;
 }
 
+/* HEADER — CLEAN FLEX */
 header {
     height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
     padding-inline: 1rem;
+
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
-@media screen and (min-width: 1366px) {
-    header {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        padding-inline: 1rem;
-    }
-
-    header .actions {
-        justify-self: end;
-        margin-left: 0;
-    }
-}
-
+/* LEFT */
 header .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* CENTER */
 header .nav {
     display: flex;
-    gap: 1rem;
-    flex: 0 1 auto;
+    gap: 1.5rem;
 }
 
+/* RIGHT */
 header .actions {
     margin-left: auto;
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 }
 
-header button {
+/* prevent wrapping */
+header .nav__cta {
     white-space: nowrap;
 }
 
