@@ -39,35 +39,54 @@ main {
     background-color: var(--color-background);
     color: var(--color-on-background);
     display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16em, 1fr);
     column-gap: 2rem;
 }
 
+/* HEADER FIX */
 header {
-    display: flex;
-    padding-inline: 1rem;
     height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
 }
+
+/* large screens → proper left / right layout */
 @media screen and (min-width: 1366px) {
     header {
         display: grid;
-        padding-inline: 0;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        padding-inline: 1rem;
     }
 }
+
+/* LEFT SIDE */
 header .logo {
-    justify-self: end;
-    align-self: center;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
 }
+
+/* NAV (still left) */
 header .nav {
-    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+/* RIGHT SIDE */
+header .actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* prevent button wrapping */
+header button {
+    white-space: nowrap;
 }
 
 main {
@@ -77,6 +96,7 @@ main {
     grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
 }
+
 main > div {
     overflow-y: auto;
 }
