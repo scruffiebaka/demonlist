@@ -43,7 +43,6 @@ main {
     column-gap: 2rem;
 }
 
-/* HEADER FIX */
 header {
     height: 4rem;
     background-color: var(--color-primary);
@@ -53,7 +52,6 @@ header {
     align-items: center;
 }
 
-/* large screens → proper left / right layout */
 @media screen and (min-width: 1366px) {
     header {
         display: grid;
@@ -61,22 +59,24 @@ header {
         align-items: center;
         padding-inline: 1rem;
     }
+
+    header .actions {
+        justify-self: end;
+        margin-left: 0;
+    }
 }
 
-/* LEFT SIDE */
 header .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* NAV (still left) */
 header .nav {
     display: flex;
     gap: 1rem;
 }
 
-/* RIGHT SIDE */
 header .actions {
     margin-left: auto;
     display: flex;
@@ -84,7 +84,6 @@ header .actions {
     gap: 1rem;
 }
 
-/* prevent button wrapping */
 header button {
     white-space: nowrap;
 }
