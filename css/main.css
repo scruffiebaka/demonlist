@@ -75,13 +75,14 @@ header .logo {
 header .nav {
     display: flex;
     gap: 1rem;
+    flex: 0 1 auto;
 }
 
 header .actions {
     margin-left: auto;
     display: flex;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
 }
 
 header button {
