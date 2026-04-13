@@ -1,14 +1,22 @@
 {
   "id": 134132421,
   "length": "0:16",
+  "featured": "",
   "name": "Miss Information",
   "author": "danman",
   "tags": "Memory, Hell-on-earth \u2705",
-  "notes": "",
+  "notes": "will never get victors",
   "creators": [
     "danman"
   ],
   "verifier": "danman",
   "verification": "https://youtu.be/NeJdwTCGXjw",
-  "records": []
+  "records": [
+    {
+      "user": "DeadXM",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
 }

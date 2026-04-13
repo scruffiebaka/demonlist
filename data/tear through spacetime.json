@@ -1,10 +1,11 @@
 {
   "id": 133147559,
   "length": "1:07",
+  "featured": "",
   "name": "tear through spacetime",
   "author": "danman",
   "tags": "Duals, Chokepoints",
-  "notes": "\u003C\u003C im not joking this is the best top 10 in terms of enjoyment \u003C\u003Cthats where youre WRONG",
+  "notes": "im not joking this is the best top 10 in terms of enjoyment \u003C\u003Cthats where youre WRONG",
   "creators": [
     "danman"
   ],
@@ -13,6 +14,12 @@
   "records": [
     {
       "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "amylova",
       "link": "",
       "percent": 100,
       "hz": 0

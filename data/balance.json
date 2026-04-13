@@ -1,10 +1,11 @@
 {
   "id": 131982795,
   "length": "0:31",
+  "featured": "",
   "name": "balance",
   "author": "sznapis",
   "tags": "Cube, ball, ship (unbalanced)",
-  "notes": "\u003C\u003Cfun \u003C\u003Csecret top 0 \u003C\u003C not true \u003C\u003Ctop 10 in disguise",
+  "notes": "fun \u003C\u003Csecret top 0 \u003C\u003C not true \u003C\u003Ctop 10 in disguise",
   "creators": [
     "sznapis"
   ],
@@ -37,6 +38,12 @@
     },
     {
       "user": "vex",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "amylova",
       "link": "",
       "percent": 100,
       "hz": 0

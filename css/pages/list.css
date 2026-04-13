@@ -145,7 +145,7 @@
 }
 
 .page-list .list .level.level-top button {
-    background: linear-gradient(90deg,rgba(219, 156, 255, 0.4) 0%, rgba(157, 0, 255, 0.4) 85%);
+    background: linear-gradient(90deg,rgba(129, 255, 202, 0.089) 0%, rgba(128, 13, 204, 0.233) 95%);
     color: var(--color-on-background);
 }
 .page-list .list .level.level-top.active button {
@@ -154,9 +154,10 @@
 }
 
 .page-list .list .level.level-featured button {
-    background: linear-gradient(90deg,rgba(228, 191, 255, 0.3) 0%, rgba(226, 158, 232, 0.3) 70%);
-    color: var(--color-on-background);
+    background: linear-gradient(90deg, rgba(138, 255, 157, 0.062) 0%, rgba(115, 3, 119, 0.329) 80%);
+    background-color: transparent;
 }
+
 .page-list .list .level.level-featured.active button {
     background: var(--color-primary);
     color: var(--color-on-primary);
@@ -169,6 +170,36 @@
 .page-list .list .level.level-angel.active button {
     background: var(--color-primary);
     color: var(--color-on-primary);
+}
+
+.id-copy {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.id-copy .tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: var(--color-on-background);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.id-copy:hover .tooltip {
+    opacity: 1;
+}
+
+.id-copy .tooltip {
+    font-family: "Lexend Deca", sans-serif; /* or whatever you use */
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */

@@ -1,17 +1,23 @@
 {
-  "id": 134566466,
-  "length": "0:13",
+  "id": 136551473,
+  "length": "0:06",
   "featured": "",
-  "name": "Memory Level II",
-  "author": "aqrlr",
-  "tags": "Memory",
-  "notes": "",
+  "name": "anino",
+  "author": "amylova",
+  "tags": "Wave",
+  "notes": "\u003C\u003C stupid level",
   "creators": [
-    "aqrlr"
+    "amylova"
   ],
-  "verifier": "aqrlr",
+  "verifier": "amylova",
   "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
   "records": [
+    {
+      "user": "JohnHuman",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
     {
       "user": "mold",
       "link": "",
@@ -19,19 +25,7 @@
       "hz": 0
     },
     {
-      "user": "detempt",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
-    {
-      "user": "vex",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
-    {
-      "user": "xeo_o",
+      "user": "markehl",
       "link": "",
       "percent": 100,
       "hz": 0

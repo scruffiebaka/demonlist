@@ -1,10 +1,11 @@
 {
   "id": 136485628,
   "length": "0:30",
+  "featured": "",
   "name": "bi circles",
   "author": "itsGalaxie",
   "tags": "Wave",
-  "notes": "\u003C\u003C NLW BTW",
+  "notes": "NLW BTW \u003C\u003C not",
   "creators": [
     "itsGalaxie"
   ],
@@ -30,6 +31,12 @@
       "hz": 0
     },
     {
+      "user": "amylova",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
       "user": "xeo_o",
       "link": "",
       "percent": 100,
@@ -49,6 +56,18 @@
     },
     {
       "user": "Cala",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "tyuu6ihn",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "DeadXM",
       "link": "",
       "percent": 100,
       "hz": 0

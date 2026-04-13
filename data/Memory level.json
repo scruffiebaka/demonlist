@@ -1,6 +1,7 @@
 {
   "id": 133536685,
   "length": "NA",
+  "featured": "",
   "name": "Memory level",
   "author": "aqrlr\n",
   "tags": "NA",
@@ -30,7 +31,7 @@
       "hz": 0
     },
     {
-      "user": "xeo",
+      "user": "xeo_o",
       "link": "",
       "percent": 100,
       "hz": 0

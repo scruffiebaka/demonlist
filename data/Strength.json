@@ -1,6 +1,7 @@
 {
   "id": 136469020,
   "length": "0:09",
+  "featured": "",
   "name": "Strength",
   "author": "Gaseba",
   "tags": "Unbalanced, Fast-paced, Flow",
@@ -25,6 +26,12 @@
     },
     {
       "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "DeadXM",
       "link": "",
       "percent": 100,
       "hz": 0

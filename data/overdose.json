@@ -1,10 +1,11 @@
 {
   "id": 132016520,
   "length": "0:22",
+  "featured": "",
   "name": "overdose",
   "author": "FearFlora",
   "tags": "Fast-paced, High CPS, Learny",
-  "notes": "\u003C\u003C FUN FUN FUN FUN FUN",
+  "notes": "FUN FUN FUN FUN FUN",
   "creators": [
     "FearFlora"
   ],
@@ -19,6 +20,12 @@
     },
     {
       "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "amylova",
       "link": "",
       "percent": 100,
       "hz": 0

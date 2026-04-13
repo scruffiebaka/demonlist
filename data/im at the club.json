@@ -1,16 +1,23 @@
 {
   "id": 136668000,
   "length": "0:33",
+  "featured": "",
   "name": "im at the club",
   "author": "scruffie",
   "tags": "Wave, Wave",
-  "notes": "\u003C\u003C im at the CLUBBBB",
+  "notes": "im at the CLUBBBB",
   "creators": [
     "scruffie"
   ],
-  "verifier": "markehl",
+  "verifier": "amylova",
   "verification": "https://youtu.be/sULWkGNrQ6A",
   "records": [
+    {
+      "user": "markehl",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
     {
       "user": "mold",
       "link": "",

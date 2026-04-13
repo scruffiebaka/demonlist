@@ -53,6 +53,10 @@ export default {
                         <div class="type-title-sm">Tags</div>
                         <p>{{ level.tags || NA }}</p>
                     </div>
+                    <div class="enjoyment" v-if="level.enjoyment">
+                        <div class="type-title-sm">Enjoyment</div>
+                        <p>{{ level.enjoyment || NA }}</p>
+                    </div>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
@@ -62,7 +66,10 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p class="type-label-lg link" @click="copyText(level.id)">{{ level.id }}</p>
+                            <div class="id-copy" @click="copyText(level.id)">
+                                <p class="type-label-lg link">{{ level.id }}</p>
+                                <span class="tooltip">{{ copied ? 'Copied!' : 'Click to copy' }}</span>
+                            </div>
                         </li>
                         <li>
                             <div class="type-title-sm">Length</div>
@@ -117,63 +124,14 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h3>Submission Requirements</h3>
-                    <p>
-                        Achieved the record without using hacks (however, FPS bypass is allowed)
-                    </p>
-                    <p>
-                        Have either source audio or clicks/taps in the video. Edited audio only does not count
-                    </p>
-                    <p>
-                        The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt. Everyplay records are exempt from this
-                    </p>
-                    <p>
-                        The recording must also show the endscreen.
-                    </p>
-                    <p>
-                        Do not use secret routes or bug routes that significantly alter the difficulty of the level
-                    </p>
-                    <p>
-                        Do not use easy modes, only a record of the unmodified level qualifies
-                    </p>
-                    <p>
-                        Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level
-                    </p>
-                    <p>
-                        If you are to use a camera recording instead of a screen recording, please ensure that it is high quality, 30fps minimum, and that the Geometry Dash window covers a minimum of half of the height of the window on both sides and half of the width of the window on top and bottom.
-                    </p>
-                    <h3>Level Creation Rules</h3>
-                    <p>
-                        Levels must be made specifically for the NARLL.
-                    </p>
-                    <p>
-                        Updates are generally only allowed for bugfixes.
-                    </p>
-                    <p>
-                        There is a minimum quality baseline. Your level might be rejected if we don't deem it good enough. How do we decide? ITS ALL SUBJECTIVE
-                    </p>
-                    <p>
-                        Obviously, no NSFW art or anything that would violate the NAR Discord rules.
-                    </p>
-                    <p>
-                        Levels must be made possible for any framerate above 60FPS
-                    </p>
-                    <h3>Gameplay Restrictions</h3>
-                    <p>
-                        Spam of ≥12 CPS in any stint of 3+ inputs
-                    </p>
-                    <p>
-                        Minigames.
-                    </p>
-                    <p>
-                        Random/pseudorandom triggers that affect visual and/or GP clarity
-                    </p>
-                    <h3>Gameplay Restrictions</h3>
+                    <h2><a href="https://docs.google.com/document/d/13Tmtj1G1ydiBz4_banBFvjvMiIXlnpYhOzq-GMohPxs/edit?usp=sharing" target="_blank">NARLL Guidelines</a></h2>
+                    <h8>^ clickable link</h8>
+                    <h3>Notes:</h3>
                     <p>
                         The NARLL Website is in beta, so expect some stuff to be unfinished or bugged.
                     </p>
                     <p>
-                        Want the old spreadsheet version of the list? Here: 
+                        Want the old spreadsheet version of the list? Here: <a href="https://docs.google.com/spreadsheets/d/1gsfQKeiUm-mlEayo3e4FskkvuFJtIPjF_ad18j9q9XI">spreadsheet</a>
                 </div>
             </div>
         </main>
@@ -185,7 +143,8 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store
+        store,
+        copied: false
     }),
     computed: {
         level() {
@@ -229,12 +188,15 @@ export default {
         this.loading = false;
     },
     methods: {
-            embed,
-            score,
-            copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert(`Copied ID: ${text}`);
-            });
+        embed,
+        score,
+        copyText(text) {
+            navigator.clipboard.writeText(text);
+            this.copied = true;
+
+            setTimeout(() => {
+                this.copied = false;
+            }, 1000);
         },
     },
 };

@@ -1,6 +1,7 @@
 {
-  "id": 136865288,
+  "id": 137304505,
   "length": "0:13",
+  "featured": "",
   "name": "scary scary john",
   "author": "miles",
   "tags": "Wave Spam, Timings, Ship",
@@ -10,5 +11,12 @@
   ],
   "verifier": "mold",
   "verification": "https://youtu.be/rSt-81BvTBs",
-  "records": []
+  "records": [
+    {
+      "user": "juyeko",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ]
 }

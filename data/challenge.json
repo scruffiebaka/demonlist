@@ -1,6 +1,7 @@
 {
   "id": 131714860,
   "length": "NA",
+  "featured": "",
   "name": "challenge",
   "author": "itsGalaxie",
   "tags": "NA",
@@ -8,15 +9,9 @@
   "creators": [
     "itsGalaxie"
   ],
-  "verifier": "-",
+  "verifier": "cookie",
   "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
   "records": [
-    {
-      "user": "cookie",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
     {
       "user": "EternalUMI",
       "link": "",

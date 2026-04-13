@@ -1,6 +1,7 @@
 {
   "id": 135094808,
   "length": "0:10",
+  "featured": "",
   "name": "avernus startpos 2",
   "author": "vex",
   "tags": "Sync but its offset by 1 second",
@@ -49,6 +50,12 @@
     },
     {
       "user": "shittydruki",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Feefs11",
       "link": "",
       "percent": 100,
       "hz": 0
