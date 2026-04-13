@@ -22,12 +22,14 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-            <input 
-                type="text" 
-                v-model="search" 
-                placeholder="Search levels..." 
-                class="search-bar"
-            />
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    v-model="search" 
+                    placeholder="Search levels..." 
+                    class="search-bar"
+                />
+            </div>
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in filteredList">
                         <td class="rank">
@@ -51,6 +53,9 @@ export default {
                         </td>
                     </tr>
                 </table>
+                <p v-if="filteredList.length === 0">
+                    No results found.
+                </p>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
