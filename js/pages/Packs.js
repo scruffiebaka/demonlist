@@ -15,51 +15,45 @@ export default {
         </main>
 
         <main v-else class="page-list">
-            <div class="list-container packs-layout">
 
-                <!-- PACKS -->
-                <div class="packs">
-                    <table class="list">
-                        <tr v-for="(pack, i) in packs" :key="i">
-                            <td 
-                                class="level"
-                                :class="{ active: selectedPack === i }"
-                            >
-                                <button @click="selectPack(i)">
-                                    <span class="type-label-lg">{{ pack.name }}</span>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- LEVELS -->
-                <div class="pack-levels">
-                    <table class="list" v-if="currentPackLevels">
-                        <tr v-for="([level, err], i) in currentPackLevels" :key="i">
-                            <td 
-                                class="level"
-                                :class="{
-                                    active: selectedLevel === i,
-                                    error: !level,
-                                    'level-top': level && level.featured === 'top',
-                                    'level-featured': level && level.featured === 'featured',
-                                    'level-angel': level && level.featured === 'award'
-                                }"
-                            >
-                                <button @click="selectedLevel = i">
-                                    <span class="type-label-lg">
-                                        {{ level ? level.name : 'Error (' + err + '.json)' }}
-                                    </span>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
+            <!-- PACKS -->
+            <div class="packs-container">
+                <table class="list">
+                    <tr v-for="(pack, i) in packs" :key="i">
+                        <td class="level" :class="{ active: selectedPack === i }">
+                            <button @click="selectPack(i)">
+                                <span class="type-label-lg">{{ pack.name }}</span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
-            <!-- RIGHT PANEL -->
+            <!-- LEVELS -->
+            <div class="pack-levels-container">
+                <table class="list" v-if="currentPackLevels">
+                    <tr v-for="([level, err], i) in currentPackLevels" :key="i">
+                        <td 
+                            class="level"
+                            :class="{
+                                active: selectedLevel === i,
+                                error: !level,
+                                'level-top': level && level.featured === 'top',
+                                'level-featured': level && level.featured === 'featured',
+                                'level-angel': level && level.featured === 'award'
+                            }"
+                        >
+                            <button @click="selectedLevel = i">
+                                <span class="type-label-lg">
+                                    {{ level ? level.name : 'Error (' + err + '.json)' }}
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- LEVEL VIEW -->
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
@@ -116,6 +110,7 @@ export default {
                     <p>An error occured.</p>
                 </div>
             </div>
+
         </main>
     `,
 
@@ -127,7 +122,6 @@ export default {
             selectedPack: 0,
             selectedLevel: 0,
             loading: true,
-            errors: [],
             store
         };
     },
@@ -141,9 +135,7 @@ export default {
         },
         video() {
             if (!this.level) return "";
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
-            }
+            if (!this.level.showcase) return embed(this.level.verification);
             return embed(this.level.showcase);
         }
     },
@@ -165,7 +157,6 @@ export default {
             this.selectedLevel = 0;
 
             if (!this.packLevels[i]) {
-                // load full list ONCE
                 if (!this.fullList) {
                     this.fullList = await fetchList();
                 }

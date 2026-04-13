@@ -1,36 +1,17 @@
-/* MAIN PAGE LAYOUT (CRITICAL FIX) */
 .page-list {
     display: grid;
-    grid-template-columns: 1.2fr 2fr; /* left (packs+levels) | right (level display) */
-}
-
-/* CONTAINERS */
-.page-list .list-container,
-.page-list .level-container {
-    padding-block: 2rem;
-}
-
-.page-list .list-container {
-    padding-inline: 1rem;
-}
-
-/* LEFT SIDE: PACKS + LEVELS */
-.list-container.packs-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* packs | levels */
+    grid-template-columns: 1fr 1fr 2fr;
     gap: 1rem;
 }
 
-/* SCROLL AREAS */
-.packs,
-.pack-levels {
+.packs-container,
+.pack-levels-container {
     overflow-y: auto;
     max-height: 80vh;
+    padding: 2rem 1rem;
 }
 
-/* LIST STYLING */
 .page-list .list {
-    table-layout: auto;
     width: 100%;
 }
 
@@ -58,7 +39,6 @@
     color: var(--color-on-primary);
 }
 
-/* FEATURE COLORS */
 .page-list .list .level.level-top button {
     background: linear-gradient(90deg, rgba(219,156,255,0.4), rgba(157,0,255,0.4));
 }
@@ -71,12 +51,14 @@
     background: linear-gradient(90deg, rgba(0,183,255,0.3), rgba(255,191,250,0.3), rgba(255,255,255,0.3));
 }
 
-/* RIGHT PANEL */
+.page-list .level-container {
+    padding: 2rem;
+}
+
 .page-list .level-container .level {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-right: 2rem;
     max-width: 48rem;
 }
 
