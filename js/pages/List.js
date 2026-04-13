@@ -22,8 +22,14 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+            <input 
+                type="text" 
+                v-model="search" 
+                placeholder="Search levels..." 
+                class="search-bar"
+            />
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    <tr v-for="([level, err], i) in filteredList">
                         <td class="rank">
                             <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
@@ -144,11 +150,21 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        copied: false
+        copied: false,
+        search: "",
     }),
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.filteredList[this.selected]?.[0];
+        },
+        filteredList() {
+            if (!this.search) return this.list;
+
+            const q = this.search.toLowerCase();
+
+            return this.list.filter(([level]) =>
+                level?.name?.toLowerCase().includes(q)
+            );
         },
         video() {
             if (!this.level.showcase) {
@@ -198,5 +214,10 @@ export default {
                 this.copied = false;
             }, 1000);
         },
+    },
+    watch: {
+        search() {
+            this.selected = 0;
+        }
     },
 };
