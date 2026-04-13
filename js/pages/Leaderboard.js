@@ -56,9 +56,9 @@ export default {
                         <tr v-if="mode === 'list'"
                             v-for="(e, i) in leaderboard"
                         >
-                            <td class="rank">#{{ i + 1 }}</td>
-                            <td class="total">{{ localize(e.total) }}</td>
-                            <td class="user" :class="{ active: selected === i }">
+                            <td class="type-label-lg" class="rank">#{{ i + 1 }}</td>
+                            <td class="type-label-lg" class="total">{{ localize(e.total) }}</td>
+                            <td class="type-label-lg" class="user" :class="{ active: selected === i }">
                                 <button @click="selected = i">
                                     {{ e.user }}
                                 </button>
@@ -69,9 +69,9 @@ export default {
                         <tr v-else
                             v-for="(c, i) in creators"
                         >
-                            <td class="rank">#{{ i + 1 }}</td>
-                            <td class="total">{{ c.points }}</td>
-                            <td class="user" :class="{ active: selected === i }">
+                            <td class="type-label-lg" class="rank">#{{ i + 1 }}</td>
+                            <td class="type-label-lg" class="total">{{ c.points }}</td>
+                            <td class="type-label-lg" class="user" :class="{ active: selected === i }">
                                 <button @click="selected = i">
                                     {{ c.user }}
                                 </button>
