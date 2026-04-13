@@ -39,6 +39,7 @@ header {
     align-items: stretch;
     padding-inline: 1rem;
     height: 4rem;
+    flex-shrink: 0;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
 }
@@ -46,7 +47,7 @@ header {
 /* LOGO */
 header .logo {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -67,14 +68,16 @@ header .nav__actions {
 
 /* MAIN */
 main {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-
     flex: 1;
+    min-height: 0; /* IMPORTANT for scroll containers */
+    
     display: grid;
     grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16rem, 1fr);
     grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
+
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 }
 
 main > div {
