@@ -22,7 +22,6 @@
             type="text/css"
             href="/css/pages/leaderboard.css"
         />
-        <link rel="stylesheet" type="text/css" href="/css/pages/packs.css" />
         <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
         <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
         <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
@@ -39,9 +38,8 @@
         <header :class="{ dark: store.dark }">
             <div class="logo">
                 <h2>NARLL</h2>
-                <p>v1.0.0</p>
+                <p>beta4.1.2</p>
             </div>
-
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">List</span>
@@ -49,33 +47,36 @@
                 <router-link class="nav__tab" to="/leaderboard">
                     <span class="type-label-lg">Leaderboard</span>
                 </router-link>
+                <router-link class="nav__tab" to="/creators">
+                    <span class="type-label-lg">Creators</span>
+                </router-link>
                 <router-link class="nav__tab" to="/roulette">
                     <span class="type-label-lg">Roulette</span>
                 </router-link>
-                <router-link class="nav__tab" to="/packs">
-                    <span class="type-label-lg">Packs</span>
-                </router-link>
             </nav>
-
-            <!-- MOVED OUTSIDE -->
-            <div class="actions">
-                <button class="nav__icon" @click.prevent="store.toggleDark()">
+            <div class="nav__actions">
+                <button
+                    class="nav__icon"
+                    @click.prevent="store.toggleDark()"
+                >
                     <img
                         :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
                         alt=""
                     />
                 </button>
-
-                <a class="nav__icon" href="#">
+                <!-- Replace the '#' with your discord server's invite-->
+                <a class="nav__icon" href="https://discord.gg/zeroshi">
                     <img src="/assets/discord.svg" alt="Discord Logo" />
                 </a>
-
-                <a class="nav__cta type-label-lg" href="#" target="_blank">
-                    Submit Record
-                </a>
+                <!-- List record submission form, add a link to replace the '#' when putting a link to your list submission form-->
+                <a
+                    class="nav__cta type-label-lg"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSd6XNTbss-yyXm5-TnK55tBbhnQ6fwv23S55i_q3mQPv9t44w/viewform?usp=preview"
+                    target="_blank"
+                    >Submit Record</a
+                >
             </div>
         </header>
-
         <router-view :class="{ dark: store.dark }"></router-view>
     </body>
 </html>
