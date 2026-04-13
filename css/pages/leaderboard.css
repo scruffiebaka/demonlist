@@ -30,6 +30,34 @@
 .page-leaderboard .board-container {
     padding-inline: 1rem;
 }
+.page-leaderboard .board-container .selector {
+    padding: 7px 7px 0px 7px;
+    height: 3em;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: -0.8em 1.2em 1.2em 0;
+    background-color: var(--color-primary);
+}
+.page-leaderboard .board-container .selector .nav__tab {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-top: 4px;
+    border-bottom: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    padding-inline: 0.5rem;
+    transition: border-color 100ms ease;
+    color: var(--color-on-primary);
+}
+.page-leaderboard .board-container .selector .nav__tab:hover {
+    border-color: var(--color-on-primary);
+}
+.page-leaderboard .board-container .selector .nav__tab.active-tab {
+    border-bottom-color: var(--color-on-primary);
+}
+
 .page-leaderboard .board {
     table-layout: auto;
     display: block;
@@ -85,28 +113,19 @@
 .page-leaderboard .player .table .score p {
     text-align: end;
 }
+.page-leaderboard .player .packs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+}
+.page-leaderboard .player .packs .tag {
+    display: flex;
+    flex-shrink: 0;
+    background-size: 100% 100% !important;
+}
 .page-leaderboard .player .table .level {
     width: 100%;
 }
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
-}
-
-.toggle {
-    display: block;
-    gap: 6px;
-    margin-bottom: 12px;
-}
-
-.toggle button {
-    border-radius: 999px;
-    padding: 6px 14px;
-    border: none;
-    background: var(--color-primary);
-    color: white;
-    opacity: 0.6;
-}
-
-.toggle button:hover {
-    opacity: 1;
 }
