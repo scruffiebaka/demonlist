@@ -31,15 +31,15 @@ export default {
                 />
             </div>
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in filteredList">
+                    <tr v-for="([level, err, originalIndex], i) in filteredList">
                         <td class="rank">
-                            <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
+                            <p v-if="originalIndex + 1 <= 50" class="type-label-lg">#{{ originalIndex + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
                         <td 
                             class="level" 
                             :class="[
-                                { 'active': selected == i, 'error': !level },
+                                { 'active': selected == originalIndex, 'error': !level },
                                 {
                                 'level-top': level?.featured === 'top',
                                 'level-featured': level?.featured === 'featured',
@@ -47,7 +47,7 @@ export default {
                                 }
                             ]"
                         >
-                            <button @click="selected = i">
+                            <button @click="selected = originalIndex">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
@@ -68,7 +68,7 @@ export default {
                         <div class="type-title-sm">Enjoyment</div>
                         <p>{{ level.enjoyment || NA }}</p>
                     </div>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+                    <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
@@ -107,8 +107,15 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>An error occured.</p>
+                <div v-else class="level default-view">
+                    <div class="default-center">
+                        <h1>NARLL</h1>
+                        <p>Welcome to the New Angels Republic Levels List</p>
+
+                        <div class="default-actions">
+                            <p>Test</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="meta-container">
@@ -151,7 +158,7 @@ export default {
         list: [],
         editors: [],
         loading: true,
-        selected: 0,
+        selected: null,
         errors: [],
         roleIconMap,
         store,
@@ -160,16 +167,21 @@ export default {
     }),
     computed: {
         level() {
+            if (this.selected === null) return null;
             return this.filteredList[this.selected]?.[0];
         },
         filteredList() {
-            if (!this.search) return this.list;
+            if (!this.search) {
+                return this.list.map((item, i) => [...item, i]);
+            }
 
             const q = this.search.toLowerCase();
 
-            return this.list.filter(([level]) =>
-                level?.name?.toLowerCase().includes(q)
-            );
+            return this.list
+                .map((item, i) => [...item, i])
+                .filter(([level]) =>
+                    level?.name?.toLowerCase().includes(q)
+                );
         },
         video() {
             if (!this.level.showcase) {
