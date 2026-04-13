@@ -91,3 +91,22 @@
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
 }
+
+.toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.toggle button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+.toggle button.active {
+    background: #2f6df6;
+    color: white;
+}
