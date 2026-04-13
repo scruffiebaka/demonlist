@@ -94,19 +94,19 @@
 
 .toggle {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 10px;
 }
 
 .toggle button {
-    padding: 8px 16px;
-    border-radius: 10px;
+    border-radius: 999px;
+    padding: 6px 14px;
     border: none;
-    background: #eee;
-    cursor: pointer;
+    background: var(--color-primary);
+    color: white;
+    opacity: 0.6;
 }
 
-.toggle button.active {
-    background: #2f6df6;
-    color: white;
+.toggle button:hover {
+    opacity: 1;
 }
