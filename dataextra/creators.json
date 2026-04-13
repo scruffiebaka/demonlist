@@ -1,50 +1,35 @@
 [
   {
     "user": "Rosieel",
-    "points": 9,
-    "featured": ["Spaceless Unleashed", "spaceless"],
-    "best": "Spaceless Unleashed"
+    "points": 6,
+    "featured": [
+      "135454335",
+      "134649177"
+    ],
+    "best": "134649177"
   },
   {
     "user": "miles",
     "points": 6,
-    "featured": ["scary scary gabe"],
-    "best": "scary scary gabe"
-  },
-  {
-    "user": "wattiwatt",
-    "points": 6,
-    "featured": ["hexa ever clear"],
-    "best": "hexa ever clear"
+    "featured": [
+      "135417369"
+    ],
+    "best": "135417369"
   },
   {
     "user": "aqrlr",
     "points": 3,
-    "featured": ["AREA 33"],
-    "best": "AREA 33"
+    "featured": [
+      "135394064"
+    ],
+    "best": "135394064"
   },
   {
     "user": "blue_orbe",
     "points": 3,
-    "featured": ["LXVI"],
-    "best": "LXVI"
-  },
-  {
-    "user": "EternalUMI",
-    "points": 3,
-    "featured": ["71a3"],
-    "best": "71a3"
-  },
-  {
-    "user": "Lumi",
-    "points": 1.5,
-    "featured": ["Requiem"],
-    "best": "Requiem"
-  },
-  {
-    "user": "Cala",
-    "points": 1.5,
-    "featured": ["Requiem"],
-    "best": "Requiem"
+    "featured": [
+      "134946991"
+    ],
+    "best": "134946991"
   }
 ]

@@ -2,6 +2,22 @@ import { fetchLeaderboard, fetchCreators } from "../content.js";
 import { localize } from "../util.js";
 import Spinner from "../components/Spinner.js";
 
+function computeRanks(arr, key) {
+    let prevValue = null;
+    let rank = 0;
+
+    return arr.map((item, i) => {
+        const value = item[key];
+
+        if (value !== prevValue) {
+            rank = i + 1;
+            prevValue = value;
+        }
+
+        return { ...item, rank };
+    });
+}
+
 export default {
     components: { Spinner },
 
@@ -47,13 +63,13 @@ export default {
                         <tr 
                             v-for="(ientry, i) in (mode === 'list' ? leaderboard : creators)"
                             :class="{
-                                'top-1': i === 0,
-                                'top-2': i === 1,
-                                'top-3': i === 2
+                                'top-1': ientry.rank === 1,
+                                'top-2': ientry.rank === 2,
+                                'top-3': ientry.rank === 3
                             }"
                         >
                             <td class="rank">
-                                <p class="type-label-lg">#{{ i + 1 }}</p>
+                                <p class="type-label-lg">#{{ ientry.rank }}</p>
                             </td>
 
                             <td class="total">
@@ -83,7 +99,6 @@ export default {
                             {{ mode === 'list' ? entry.total : (creator.points + ' points') }}
                         </h3>
 
-                        <!-- LIST -->
                         <template v-if="mode === 'list'">
 
                             <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length}})</h2>
@@ -110,7 +125,6 @@ export default {
 
                         </template>
 
-                        <!-- CREATOR -->
                         <template v-else>
 
                             <h2>Best Awarded Level</h2>
@@ -147,11 +161,19 @@ export default {
 
     async mounted() {
         const [leaderboard, err] = await fetchLeaderboard();
-        this.leaderboard = leaderboard;
         this.err = err;
 
-        const creators = await fetchCreators(); // FIXED HERE
-        this.creators = creators ? creators.sort((a, b) => b.points - a.points) : [];
+        this.leaderboard = computeRanks(
+            leaderboard.sort((a, b) => b.total - a.total),
+            "total"
+        );
+
+        const creators = await fetchCreators();
+
+        this.creators = computeRanks(
+            (creators || []).sort((a, b) => b.points - a.points),
+            "points"
+        );
 
         this.loading = false;
     }
