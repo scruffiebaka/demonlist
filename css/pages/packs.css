@@ -1,22 +1,78 @@
-.page-packs-container {
-    display: block;
-}
-
-.page-packs {
-    height: 100%;
-    display: grid;
-    grid-template-columns: minmax(16rem, 1.5fr) 3fr 2fr;
-    column-gap: 2rem;
-    max-width: 90rem;
-    margin: 0 auto;
-}
-
-.page-packs > div {
-    overflow-y: auto;
+.page-list .list-container,
+.page-list .level-container {
     padding-block: 2rem;
-    min-height: 0;
 }
 
-html, body, #app {
-    height: 100%;
+.page-list .list-container {
+    padding-inline: 1rem;
+}
+
+.packs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.packs,
+.pack-levels {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.page-list .list {
+    table-layout: auto;
+}
+
+.page-list .list .level {
+    width: 100%;
+}
+
+.page-list .list .level button {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: start;
+    cursor: pointer;
+}
+
+.page-list .list .level button:hover {
+    background-color: var(--color-background-hover);
+}
+
+.page-list .list .level.active button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.page-list .list .level.level-top button {
+    background: linear-gradient(90deg,rgba(219,156,255,0.4),rgba(157,0,255,0.4));
+}
+
+.page-list .list .level.level-featured button {
+    background: linear-gradient(90deg,rgba(228,191,255,0.3),rgba(226,158,232,0.3));
+}
+
+.page-list .list .level.level-angel button {
+    background: linear-gradient(90deg,rgba(0,183,255,0.3),rgba(255,191,250,0.3),rgba(255,255,255,0.3));
+}
+
+.page-list .level-container .level {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 2rem;
+    max-width: 48rem;
+}
+
+.page-list .level-container .video {
+    aspect-ratio: 16/9;
+}
+
+.page-list .level-container .stats {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 2rem;
 }
