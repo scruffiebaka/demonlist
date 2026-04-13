@@ -34,18 +34,7 @@ body {
     margin: 0;
 }
 
-header,
-main {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-    display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
-    column-gap: 2rem;
-}
-
+/* HEADER FIX */
 header {
     display: flex;
     align-items: center;
@@ -55,31 +44,40 @@ header {
     color: var(--color-on-primary);
 }
 
+/* LOGO */
 header .logo {
-    justify-self: end;
-    align-self: center;
     display: flex;
     align-items: flex-end;
     gap: 1rem;
 }
+
+/* NAV */
 header .nav {
     display: flex;
     gap: 1rem;
+    margin-left: 2rem;
 }
-header .actions {
+
+/* FIXED CLASS NAME */
+header .nav__actions {
     margin-left: auto;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* MAIN */
 main {
-    height: 0;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+
     flex: 1;
     display: grid;
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16rem, 1fr);
     grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
 }
+
 main > div {
     overflow-y: auto;
 }
