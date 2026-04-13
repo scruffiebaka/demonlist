@@ -121,6 +121,7 @@ export default {
                         Have fun and don't forget to join the discord! :3
                     </p>
                 </div>
+            </div>
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
