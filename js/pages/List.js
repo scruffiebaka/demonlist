@@ -107,31 +107,25 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else class="level default-view">
-                    <div class="default-center">
-                        <h1>NARLL</h1>
-                        <p>Welcome to the New Angels Republic Levels List</p>
-
-                        <div class="default-actions">
-                            <p>Test</p>
-                        </div>
-                    </div>
+                <div v-else-if="selected == null" class="level" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+                    <h2>Welcome to the New Angels Republic Level List!</h2>
+                    <p>On your left is the level list, click any level to know more about it!</p>
+                    <p>On your right are the list editors and the guidelines to submitting records and levels!</p>
+                    <h3>About</h3>
+                    <p>
+                        This is the official list for the New Angel's Republic Discord Server.
+                        The website is a modified version of TSL. 
+                    </p>
+                    <p>
+                        Levels highlighted in light pink are Featured, dark purple are Top Featured, and special colored are awarded the Angel Award.
+                        Have fun and don't forget to join the discord! :3
+                    </p>
                 </div>
-            </div>
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-                    <h3>About</h3>
-                    <p>
-                        This is the official list for the New Angel's Republic Discord Server.
-                        The website is a modified version of TSL template. 
-                    </p>
-                    <p>
-                        Levels highlighted in light pink are Featured, dark purple are Top Featured, and special colored are awarded the Angel Award.
-                        Have fun! :3
-                    </p>
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
