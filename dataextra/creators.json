@@ -1,0 +1,50 @@
+[
+  {
+    "user": "Rosieel",
+    "points": 9,
+    "featured": ["Spaceless Unleashed", "spaceless"],
+    "best": "Spaceless Unleashed"
+  },
+  {
+    "user": "miles",
+    "points": 6,
+    "featured": ["scary scary gabe"],
+    "best": "scary scary gabe"
+  },
+  {
+    "user": "wattiwatt",
+    "points": 6,
+    "featured": ["hexa ever clear"],
+    "best": "hexa ever clear"
+  },
+  {
+    "user": "aqrlr",
+    "points": 3,
+    "featured": ["AREA 33"],
+    "best": "AREA 33"
+  },
+  {
+    "user": "blue_orbe",
+    "points": 3,
+    "featured": ["LXVI"],
+    "best": "LXVI"
+  },
+  {
+    "user": "EternalUMI",
+    "points": 3,
+    "featured": ["71a3"],
+    "best": "71a3"
+  },
+  {
+    "user": "Lumi",
+    "points": 1.5,
+    "featured": ["Requiem"],
+    "best": "Requiem"
+  },
+  {
+    "user": "Cala",
+    "points": 1.5,
+    "featured": ["Requiem"],
+    "best": "Requiem"
+  }
+]

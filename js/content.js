@@ -123,6 +123,16 @@ export async function fetchLeaderboard() {
     return [res.sort((a, b) => b.total - a.total), errs];
 }
 
+export async function fetchCreators() {
+    try {
+        const res = await fetch('/dataextra/creators.json');
+        const creators = await res.json();
+        return creators;
+    } catch {
+        return null;
+    }
+}
+
 export async function fetchPacks() {
     try {
         const res = await fetch('/dataextras/packs.json');
