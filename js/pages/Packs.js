@@ -14,13 +14,16 @@ export default {
             <Spinner></Spinner>
         </main>
 
-        <main v-else class="page-list page-packs">
+        <main v-else class="page-list">
 
-            <!-- PACKS -->
-            <div class="packs-container">
+            <!-- LEFT: PACKS -->
+            <div class="list-container">
                 <table class="list">
                     <tr v-for="(pack, i) in packs" :key="i">
-                        <td class="level" :class="{ active: selectedPack === i }">
+                        <td 
+                            class="level"
+                            :class="{ active: selectedPack === i }"
+                        >
                             <button @click="selectPack(i)">
                                 <span class="type-label-lg">{{ pack.name }}</span>
                             </button>
@@ -29,31 +32,7 @@ export default {
                 </table>
             </div>
 
-            <!-- LEVELS -->
-            <div class="pack-levels-container">
-                <table class="list" v-if="currentPackLevels">
-                    <tr v-for="([level, err], i) in currentPackLevels" :key="i">
-                        <td 
-                            class="level"
-                            :class="{
-                                active: selectedLevel === i,
-                                error: !level,
-                                'level-top': level && level.featured === 'top',
-                                'level-featured': level && level.featured === 'featured',
-                                'level-angel': level && level.featured === 'award'
-                            }"
-                        >
-                            <button @click="selectedLevel = i">
-                                <span class="type-label-lg">
-                                    {{ level ? level.name : 'Error (' + err + '.json)' }}
-                                </span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- LEVEL VIEW -->
+            <!-- MIDDLE: LEVEL VIEW -->
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
@@ -109,6 +88,30 @@ export default {
                 <div v-else class="level" style="height:100%;display:flex;align-items:center;justify-content:center;">
                     <p>An error occured.</p>
                 </div>
+            </div>
+
+            <!-- RIGHT: LEVELS -->
+            <div class="meta-container">
+                <table class="list" v-if="currentPackLevels">
+                    <tr v-for="([level, err], i) in currentPackLevels" :key="i">
+                        <td 
+                            class="level"
+                            :class="{
+                                active: selectedLevel === i,
+                                error: !level,
+                                'level-top': level && level.featured === 'top',
+                                'level-featured': level && level.featured === 'featured',
+                                'level-angel': level && level.featured === 'award'
+                            }"
+                        >
+                            <button @click="selectedLevel = i">
+                                <span class="type-label-lg">
+                                    {{ level ? level.name : 'Error (' + err + '.json)' }}
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
         </main>
