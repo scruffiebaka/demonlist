@@ -3,11 +3,12 @@
     column-gap: 2rem;
 }
 .nav .nav__tab {
-    padding-bottom: 4px;
-    border-bottom: 4px solid transparent;
+    height: 100%;
     display: flex;
     align-items: center;
     padding-inline: 0.5rem;
+
+    border-bottom: 4px solid transparent;
     transition: border-color 100ms ease;
 }
 .nav .nav__tab.router-link-active {
