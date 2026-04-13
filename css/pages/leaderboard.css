@@ -129,3 +129,20 @@
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
 }
+
+.page-leaderboard .board tr.top-1 button {
+    background: linear-gradient(90deg,rgba(255, 189, 3, 0.4) 10%, rgba(250, 243, 110, 0.4) 75%);
+}
+.page-leaderboard .board tr.top-2 button {
+    background: linear-gradient(90deg,rgba(191, 191, 191, 0.4) 10%, rgba(235, 235, 235, 0.4) 75%);
+}
+.page-leaderboard .board tr.top-3 button {
+    background: linear-gradient(90deg,rgba(181, 147, 85, 0.4) 10%, rgba(201, 178, 143, 0.4) 75%);
+}
+
+.page-leaderboard .board tr.top-1 .user.active button,
+.page-leaderboard .board tr.top-2 .user.active button,
+.page-leaderboard .board tr.top-3 .user.active button {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
