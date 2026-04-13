@@ -24,15 +24,14 @@ export default {
         </main>
 
         <main v-else class="page-leaderboard-container">
-            <div class="page-leaderboard">
-
-                <!-- SELECTOR -->
+                        <!-- SELECTOR -->
                 <div class="toggle">
                     <button @click="mode = 'list'; selected = 0">List Points</button>
                     <button @click="mode = 'creator'; selected = 0">Creator Points</button>
                 </div>
+            <div class="page-leaderboard">
 
-                <div class="content">
+
 
                 <!-- LIST MODE -->
                 <template v-if="mode === 'list'">
@@ -158,7 +157,6 @@ export default {
                     </div>
 
                 </template>
-                </div>
             </div>
         </main>
     `,
