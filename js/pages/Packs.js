@@ -1,6 +1,7 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
+import { fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
@@ -120,6 +121,7 @@ export default {
 
     data() {
         return {
+            fullList: null,
             packs: [],
             packLevels: {},
             selectedPack: 0,
@@ -163,18 +165,17 @@ export default {
             this.selectedLevel = 0;
 
             if (!this.packLevels[i]) {
+                // load full list ONCE
+                if (!this.fullList) {
+                    this.fullList = await fetchList();
+                }
+
                 const ids = this.packs[i].levels;
 
-                this.packLevels[i] = await Promise.all(
-                    ids.map(async (id) => {
-                        try {
-                            const res = await fetch(`/data/${id}.json`);
-                            return [await res.json(), null];
-                        } catch (e) {
-                            return [null, id];
-                        }
-                    })
-                );
+                this.packLevels[i] = ids.map(id => {
+                    const found = this.fullList.find(([lvl]) => lvl?.id == id);
+                    return found || [null, id];
+                });
             }
         },
 
