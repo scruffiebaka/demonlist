@@ -147,7 +147,7 @@ export default {
     },
 
     async mounted() {
-        const res = await fetch("/data/packs.json");
+        const res = await fetch("/dataextra/packs.json");
         this.packs = await res.json();
 
         if (this.packs.length > 0) {
