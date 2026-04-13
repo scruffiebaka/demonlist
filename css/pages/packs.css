@@ -1,16 +1,23 @@
+/* MAIN 3-COLUMN LAYOUT */
 .page-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    gap: 1rem;
+    grid-template-columns: 0.7fr 1fr 2.3fr; /* packs | levels | view */
+    gap: 2rem;
+
+    max-width: 1400px;   /* keeps everything centered */
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
+/* LEFT + MIDDLE SCROLL AREAS */
 .packs-container,
 .pack-levels-container {
     overflow-y: auto;
     max-height: 80vh;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
 }
 
+/* LIST STYLING */
 .page-list .list {
     width: 100%;
 }
@@ -39,6 +46,7 @@
     color: var(--color-on-primary);
 }
 
+/* FEATURE COLORS */
 .page-list .list .level.level-top button {
     background: linear-gradient(90deg, rgba(219,156,255,0.4), rgba(157,0,255,0.4));
 }
@@ -51,15 +59,18 @@
     background: linear-gradient(90deg, rgba(0,183,255,0.3), rgba(255,191,250,0.3), rgba(255,255,255,0.3));
 }
 
+/* RIGHT PANEL */
 .page-list .level-container {
     padding: 2rem;
+    min-width: 0; /* prevents grid overflow */
 }
 
 .page-list .level-container .level {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 48rem;
+    max-width: 700px; /* less squished */
+    width: 100%;
 }
 
 .page-list .level-container .video {
