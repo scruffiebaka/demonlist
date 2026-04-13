@@ -76,3 +76,9 @@
     text-align: center;
     gap: 2rem;
 }
+
+.list-container.packs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
