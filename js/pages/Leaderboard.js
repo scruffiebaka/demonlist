@@ -3,14 +3,14 @@ import { localize } from "../util.js";
 import Spinner from "../components/Spinner.js";
 
 function computeRanks(arr, key) {
-    let prevValue = null;
     let rank = 0;
+    let prevValue = null;
 
-    return arr.map((item, i) => {
+    return arr.map((item) => {
         const value = item[key];
 
         if (value !== prevValue) {
-            rank = i + 1;
+            rank += 1;
             prevValue = value;
         }
 
