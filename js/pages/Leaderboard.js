@@ -32,6 +32,8 @@ export default {
                     <button @click="mode = 'creator'; selected = 0">Creator Points</button>
                 </div>
 
+                <div class="content">
+
                 <!-- LIST MODE -->
                 <template v-if="mode === 'list'">
 
@@ -156,7 +158,7 @@ export default {
                     </div>
 
                 </template>
-
+                </div>
             </div>
         </main>
     `,
