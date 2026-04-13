@@ -1,32 +1,28 @@
-/* MAIN 3-COLUMN LAYOUT */
-.page-list {
+/* ONLY target packs page */
+.page-packs {
     display: grid;
-    grid-template-columns: 0.7fr 1fr 2.3fr; /* packs | levels | view */
+    grid-template-columns: 0.7fr 1fr 2.3fr;
     gap: 2rem;
 
-    max-width: 1400px;   /* keeps everything centered */
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* LEFT + MIDDLE SCROLL AREAS */
-.packs-container,
-.pack-levels-container {
+/* scroll columns */
+.page-packs .packs-container,
+.page-packs .pack-levels-container {
     overflow-y: auto;
     max-height: 80vh;
     padding: 2rem 1.5rem;
 }
 
-/* LIST STYLING */
-.page-list .list {
+/* list styling */
+.page-packs .list {
     width: 100%;
 }
 
-.page-list .list .level {
-    width: 100%;
-}
-
-.page-list .list .level button {
+.page-packs .list .level button {
     width: 100%;
     background-color: var(--color-background);
     color: var(--color-on-background);
@@ -37,49 +33,21 @@
     cursor: pointer;
 }
 
-.page-list .list .level button:hover {
-    background-color: var(--color-background-hover);
-}
-
-.page-list .list .level.active button {
+.page-packs .list .level.active button {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
 }
 
-/* FEATURE COLORS */
-.page-list .list .level.level-top button {
-    background: linear-gradient(90deg, rgba(219,156,255,0.4), rgba(157,0,255,0.4));
-}
-
-.page-list .list .level.level-featured button {
-    background: linear-gradient(90deg, rgba(228,191,255,0.3), rgba(226,158,232,0.3));
-}
-
-.page-list .list .level.level-angel button {
-    background: linear-gradient(90deg, rgba(0,183,255,0.3), rgba(255,191,250,0.3), rgba(255,255,255,0.3));
-}
-
-/* RIGHT PANEL */
-.page-list .level-container {
+/* right panel */
+.page-packs .level-container {
     padding: 2rem;
-    min-width: 0; /* prevents grid overflow */
+    min-width: 0;
 }
 
-.page-list .level-container .level {
+.page-packs .level-container .level {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 700px; /* less squished */
+    max-width: 700px;
     width: 100%;
-}
-
-.page-list .level-container .video {
-    aspect-ratio: 16/9;
-}
-
-.page-list .level-container .stats {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 2rem;
 }
