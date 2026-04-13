@@ -209,7 +209,7 @@
 .page-list .list-container .search-bar {
     width: 100%;
     padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     font-size: 1rem;
     box-sizing: border-box;
 
@@ -220,8 +220,6 @@
 .page-list .list-container .search-bar:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px var(--color-primary);
 }
-
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
