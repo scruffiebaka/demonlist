@@ -49,8 +49,7 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-                    <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    <LevelAuthors :creators="level.author" :verifier="level.verifier"></LevelAuthors>
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Highest Progress</div>
@@ -125,17 +124,6 @@ export default {
                 .filter(([level]) =>
                     level?.name?.toLowerCase().includes(q)
                 );
-        },
-        video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
-            }
-
-            return embed(
-                this.toggledShowcase
-                    ? this.level.showcase
-                    : this.level.verification
-            );
         },
     },
     async mounted() {
