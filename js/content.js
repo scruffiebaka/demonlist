@@ -36,7 +36,7 @@ export async function fetchList() {
     }
 }
 
-export async function fetchList() {
+export async function fetchUnverifiedList() {
     const listResult = await fetch(`dataextra/unverified/_list.json`);
     try {
         const list = await listResult.json();
