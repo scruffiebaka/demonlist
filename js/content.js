@@ -36,6 +36,37 @@ export async function fetchList() {
     }
 }
 
+export async function fetchList() {
+    const listResult = await fetch(`dataextra/unverified/_list.json`);
+    try {
+        const list = await listResult.json();
+
+        return await Promise.all(
+            list.map(async (id, rank) => {
+                const levelResult = await fetch(`dataextra/unverified/${id}.json`);
+
+                try {
+                    const level = await levelResult.json();
+
+                    return [
+                        {
+                            ...level,
+                            id,
+                        },
+                        null,
+                    ];
+                } catch {
+                    console.error(`Failed to load level #${rank + 1} (${id}).`);
+                    return [null, id];
+                }
+            }),
+        );
+    } catch {
+        console.error(`Failed to load list.`);
+        return null;
+    }
+}
+
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);

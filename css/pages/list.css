@@ -223,16 +223,5 @@
     border-color: var(--color-primary);
 }
 
-.default-view {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.default-center {
-    text-align: center;
-}
-
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /*scruffie: it appears i do have an idea now..*/
