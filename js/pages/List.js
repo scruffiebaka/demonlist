@@ -1,7 +1,7 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
-import { fetchEditors, fetchList } from "../content.js";
+import { fetchEditors, fetchList, fetchChangelog } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
@@ -122,6 +122,21 @@ export default {
                     <p>
                         Have fun and don't forget to join the discord! :3
                     </p>
+
+
+                    <h2>Changelog</h2>
+                    <div class="changelog">
+                        <div v-for="entry in changelog" class="changelog-entry">
+                            <h3>{{ formatDate(entry.date) }}</h3>
+                            <ul>
+                                <li v-for="change in entry.changes">
+                                    {{ change }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
             <div class="meta-container">
@@ -154,6 +169,7 @@ export default {
     data: () => ({
         list: [],
         editors: [],
+        changelog: [],
         loading: true,
         errors: [],
         roleIconMap,
@@ -195,6 +211,7 @@ export default {
         // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
+        this.changelog = await fetchChangelog();
 
         // Error handling
         if (!this.list) {
@@ -227,6 +244,15 @@ export default {
                 this.copied = false;
             }, 1000);
         },
+
+        formatDate(date) {
+        return new Date(date).toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+            });
+        },
+
     },
     watch: {
         search() {

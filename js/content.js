@@ -173,3 +173,12 @@ export async function fetchPacks() {
         return null;
     }
 }
+
+export async function fetchChangelog(){
+    try {
+        const res = await fetch('/dataextras/changelog.json');
+        return await res.json();
+    } catch{
+        return null;
+    }
+}

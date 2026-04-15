@@ -223,5 +223,17 @@
     border-color: var(--color-primary);
 }
 
+.changelog {
+    margin-top: 1rem;
+}
+
+.changelog-entry {
+    margin-bottom: 1rem;
+}
+
+.changelog-entry ul {
+    padding-left: 1rem;
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /*scruffie: it appears i do have an idea now..*/
