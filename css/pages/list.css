@@ -225,6 +225,7 @@
 
 .changelog-box {
     max-height: 300px;
+    min-width: 600px;
     overflow-y: auto;
 
     padding: 1rem;
