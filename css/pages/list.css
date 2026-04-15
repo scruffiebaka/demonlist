@@ -224,7 +224,8 @@
 }
 
 .changelog-box {
-    max-height: 300px;
+    height: 40vh;
+    min-height: 300px;
     min-width: 600px;
     overflow-y: auto;
 
@@ -248,6 +249,7 @@
 }
 
 .changelog-list {
+    font-family: "Lexend Deca", sans-serif;
     padding-left: 1rem;
     font-size: 0.9rem;
     opacity: 0.9;
