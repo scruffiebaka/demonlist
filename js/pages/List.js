@@ -146,6 +146,7 @@ export default {
                     </p>
                     <p>
                         Want the old spreadsheet version of the list? Here: <a href="https://docs.google.com/spreadsheets/d/1gsfQKeiUm-mlEayo3e4FskkvuFJtIPjF_ad18j9q9XI">spreadsheet</a>
+                    </p>
                 </div>
             </div>
         </main>
