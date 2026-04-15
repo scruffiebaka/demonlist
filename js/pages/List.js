@@ -125,10 +125,10 @@ export default {
 
 
                     <h2>Changelog</h2>
-                    <div class="changelog">
+                    <div class="changelog-box">
                         <div v-for="entry in changelog" class="changelog-entry">
-                            <h3>{{ formatDate(entry.date) }}</h3>
-                            <ul>
+                            <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
+                            <ul class="changelog-list">
                                 <li v-for="change in entry.changes">
                                     {{ change }}
                                 </li>

@@ -223,16 +223,37 @@
     border-color: var(--color-primary);
 }
 
-.changelog {
+.changelog-box {
+    max-height: 300px;
+    overflow-y: auto;
+
+    padding: 1rem;
     margin-top: 1rem;
+
+    border-radius: 0.5rem;
+    background-color: var(--color-background-hover);
+
+    text-align: left;
 }
 
 .changelog-entry {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-.changelog-entry ul {
+.changelog-date {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.changelog-list {
     padding-left: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.changelog-list li {
+    margin-bottom: 0.25rem;
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
