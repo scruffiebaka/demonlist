@@ -39,7 +39,7 @@ export default {
                         <td 
                             class="level" 
                             :class="[
-                                { 'active': selected == originalIndex, 'error': !level },
+                                { 'active': store.selected == originalIndex, 'error': !level },
                                 {
                                 'level-top': level?.featured === 'top',
                                 'level-featured': level?.featured === 'featured',
@@ -47,7 +47,7 @@ export default {
                                 }
                             ]"
                         >
-                            <button @click="selected = originalIndex">
+                            <button @click="store.selected = originalIndex">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
@@ -73,7 +73,7 @@ export default {
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points granted</div>
-                            <p>{{ score(selected + 1, 100) }}</p>
+                            <p>{{ score(store.selected + 1, 100) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
@@ -89,7 +89,7 @@ export default {
                     </ul>
                     <p>Notes: {{ level.notes }}</p>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 > 50">This level does not accept new records.</p>
+                    <p v-if="store.selected + 1 > 50">This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
@@ -107,7 +107,7 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else-if="selected == null" class="level" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+                <div v-else-if="store.selected == null" class="level" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
                     <h2>Welcome to the New Angels Republic Level List!</h2>
                     <p>On your left is the level list, click any level to know more about it!</p>
                     <p>On your right are the list editors and the guidelines to submitting records and levels!</p>
@@ -155,7 +155,6 @@ export default {
         list: [],
         editors: [],
         loading: true,
-        selected: null,
         errors: [],
         roleIconMap,
         store,
@@ -164,8 +163,8 @@ export default {
     }),
     computed: {
         level() {
-            if (this.selected === null) return null;
-            return this.filteredList[this.selected]?.[0];
+            if (store.selected === null) return null;
+            return this.filteredList[store.selected]?.[0];
         },
         filteredList() {
             if (!this.search) {
@@ -231,7 +230,7 @@ export default {
     },
     watch: {
         search() {
-            this.selected = 0;
+            store.selected = 0;
         }
     },
 };

@@ -6,6 +6,7 @@ export const store = Vue.reactive({
         this.dark = !this.dark;
         localStorage.setItem('dark', JSON.stringify(this.dark));
     },
+    selected: null,
 });
 
 const app = Vue.createApp({
