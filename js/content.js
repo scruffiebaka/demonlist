@@ -37,16 +37,17 @@ export async function fetchList() {
 }
 
 export async function fetchUnverifiedList() {
-    const listResult = await fetch(`dataextra/unverified/_list.json`);
+    const listResult = await fetch(`/dataextra/unverified/_list.json`);
+
     try {
         const list = await listResult.json();
 
         return await Promise.all(
-            list.map(async (id, rank) => {
-                const levelResult = await fetch(`dataextra/unverified/${id}.json`);
+            list.map(async (id, index) => {
+                const res = await fetch(`/dataextra/unverified/${id}.json`);
 
                 try {
-                    const level = await levelResult.json();
+                    const level = await res.json();
 
                     return [
                         {
@@ -56,13 +57,13 @@ export async function fetchUnverifiedList() {
                         null,
                     ];
                 } catch {
-                    console.error(`Failed to load level #${rank + 1} (${id}).`);
+                    console.error(`Failed to load unverified level #${index + 1} (${id}).`);
                     return [null, id];
                 }
-            }),
+            })
         );
     } catch {
-        console.error(`Failed to load list.`);
+        console.error(`Failed to load unverified list.`);
         return null;
     }
 }
