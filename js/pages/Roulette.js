@@ -92,7 +92,7 @@ export default {
                     <h1>Congratulations!!</h1>
                     <p>You finished the roulette! Heres your reward!</p>
 
-                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank" class="reward-link">
+                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0?autoplay=true" target="_blank" class="reward-link">
                         https://www.youtube.com/watch?v=oHg5SJYRHA0
                     </a>
 
