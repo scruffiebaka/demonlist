@@ -159,7 +159,7 @@ export default {
                         <template v-else>
                             <div v-for="entry in pending" class="pending-entry">
                                 <p class="pending-text">
-                                    {{ entry.text }} places on {{ formatDate(entry.date) }}
+                                    - {{ entry.text }} places on {{ formatDate(entry.date) }}
                                 </p>
                             </div>
                         </template>
