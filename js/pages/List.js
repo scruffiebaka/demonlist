@@ -149,7 +149,7 @@ export default {
                                 <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
                                 <ul class="changelog-list">
                                     <li v-for="change in entry.changes">
-                                        - <span v-html="formatChange(change)"></span>
+                                        - <span v-html="formatChange(entry.text)"></span> places on {{ formatDate(entry.date) }}
                                     </li>
                                 </ul>
                             </div>

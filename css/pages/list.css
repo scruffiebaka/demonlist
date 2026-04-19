@@ -276,6 +276,37 @@
     font-weight: 1000;
 }
 
+.page-list .selector {
+    padding: 7px 7px 0px 7px;
+    height: 3em;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 1rem 0;
+    background-color: var(--color-primary);
+}
+
+.page-list .selector .nav__tab {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-top: 4px;
+    border-bottom: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    padding-inline: 0.5rem;
+    transition: border-color 100ms ease;
+    color: var(--color-on-primary);
+}
+
+.page-list .selector .nav__tab:hover {
+    border-color: var(--color-on-primary);
+}
+
+.page-list .selector .nav__tab.active-tab {
+    border-bottom-color: var(--color-on-primary);
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
