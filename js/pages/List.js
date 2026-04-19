@@ -256,7 +256,7 @@ export default {
     },
     watch: {
         search() {
-            store.selected = 0;
+            store.selected = null;
         }
     },
 };
