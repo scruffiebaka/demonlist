@@ -183,7 +183,7 @@ export async function fetchChangelog(){
     }
 }
 
-export async function fetchChangelog(){
+export async function fetchPending(){
     try {
         const res = await fetch('/dataextra/pending.json');
         return await res.json();
