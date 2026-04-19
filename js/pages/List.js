@@ -149,7 +149,7 @@ export default {
                                 <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
                                 <ul class="changelog-list">
                                     <li v-for="change in entry.changes">
-                                        - <span v-html="formatChange(entry.text)"></span> places on {{ formatDate(entry.date) }}
+                                        - <span v-html="formatChange(change)"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -159,7 +159,7 @@ export default {
                         <template v-else>
                             <div v-for="entry in pending" class="pending-entry">
                                 <p class="pending-text">
-                                    - {{ entry.text }} places on {{ formatDate(entry.date) }}
+                                    - <span v-html="formatChange(entry.text)"></span> places on {{ formatDate(entry.date) }}
                                 </p>
                             </div>
                         </template>
