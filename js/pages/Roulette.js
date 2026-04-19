@@ -86,6 +86,17 @@ export default {
                     </template>
                 </div>
             </section>
+
+            <div v-if="showDialog" class="dialog-backdrop">
+                <div class="dialog">
+                    <h1>Completed</h1>
+                    <p>You finished the roulette.</p>
+                    <Btn @click.native="showDialog = false">Close</Btn>
+                </div>
+            </div>
+
+            <audio id="winSound" src="assets/sounds/completion.mp3"></audio>
+
             <div class="toasts-container">
                 <div class="toasts">
                     <div v-for="toast in toasts" class="toast">
@@ -106,6 +117,7 @@ export default {
         useExtendedList: true,
         toasts: [],
         fileInput: undefined,
+        showDialog: false,
     }),
     mounted() {
         this.fileInput = document.createElement('input');
@@ -119,6 +131,13 @@ export default {
 
         this.levels = roulette.levels;
         this.progression = roulette.progression;
+    },
+    watch: {
+        hasCompleted(val) {
+            if (val) {
+                this.onComplete();
+            }
+        }
     },
     computed: {
         currentLevel() {
@@ -219,6 +238,20 @@ export default {
         onGiveUp() {
             this.givenUp = true;
             localStorage.removeItem('roulette');
+        },
+        onComplete() {
+            if (window.confetti) {
+                window.confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.6 }
+                });
+            }
+
+            const audio = document.getElementById('winSound');
+            if (audio) audio.play();
+
+            this.showDialog = true;
         },
         onImport() {
             if (
