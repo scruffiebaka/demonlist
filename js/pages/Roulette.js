@@ -240,13 +240,29 @@ export default {
             localStorage.removeItem('roulette');
         },
         onComplete() {
-            if (window.confetti) {
+            const duration = 4000;
+            const end = Date.now() + duration;
+
+            const frame = () => {
                 window.confetti({
-                    particleCount: 150,
-                    spread: 80,
-                    origin: { y: 0.6 }
+                    particleCount: 8,
+                    spread: 70,
+                    angle: 60,
+                    origin: { x: 0 }
                 });
-            }
+                window.confetti({
+                    particleCount: 8,
+                    spread: 70,
+                    angle: 120,
+                    origin: { x: 1 }
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            };
+
+            frame();
 
             const audio = document.getElementById('winSound');
             if (audio) audio.play();
