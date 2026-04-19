@@ -89,8 +89,13 @@ export default {
 
             <div v-if="showDialog" class="dialog-backdrop">
                 <div class="dialog">
-                    <h1>Completed</h1>
-                    <p>You finished the roulette.</p>
+                    <h1>Congratulations!!</h1>
+                    <p>You finished the roulette! Heres your reward!</p>
+
+                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank" class="reward-link">
+                        https://www.youtube.com/watch?v=oHg5SJYRHA0
+                    </a>
+
                     <Btn @click.native="showDialog = false">Close</Btn>
                 </div>
             </div>

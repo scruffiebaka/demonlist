@@ -130,20 +130,31 @@
     }
 }
 
-.dialog-backdrop {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.6);
-    z-index: 9999;
-}
-
 .dialog {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 420px;
     width: 90%;
+    text-align: center;
+}
+
+.dialog h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.dialog p {
+    margin-bottom: 1rem;
+}
+
+.reward-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
 }
