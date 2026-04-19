@@ -1,7 +1,7 @@
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
-import { fetchEditors, fetchList, fetchChangelog } from "../content.js";
+import { fetchChangelog, fetchPending, fetchEditors, fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
@@ -34,7 +34,7 @@ export default {
                     <tr v-for="([level, err, originalIndex], i) in filteredList">
                         <td class="rank">
                             <p v-if="originalIndex + 1 <= 50" class="type-label-lg">#{{ originalIndex + 1 }}</p>
-                            <p v-else class="type-label-lg">Legacy</p>
+                            <p v-else class="type-label-lg">L</p>
                         </td>
                         <td 
                             class="level" 
@@ -88,7 +88,7 @@ export default {
                         </li>
                     </ul>
                     <p>Notes: {{ level.notes }}</p>
-                    <h2>Records</h2>
+                    <h2>Records{{ recordCountText }}</h2>
                     <p v-if="store.selected + 1 > 50">This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
@@ -123,19 +123,48 @@ export default {
                         Have fun and don't forget to join the discord! :3
                     </p>
 
+                    <div class="nav selector">
+                        <button 
+                            class="nav__tab" 
+                            :class="{ 'active-tab': mode === 'changelog' }" 
+                            @click="mode = 'changelog'"
+                        >
+                            <span class="type-label-lg">Changelog</span>
+                        </button>
 
-                    <h2>Changelog</h2>
-                    <div class="changelog-box">
-                        <div v-for="entry in changelog" class="changelog-entry">
-                            <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
-                            <ul class="changelog-list">
-                                <li v-for="change in entry.changes">
-                                    - {{ change }}
-                                </li>
-                            </ul>
-                        </div>
+                        <button 
+                            class="nav__tab" 
+                            :class="{ 'active-tab': mode === 'pending' }" 
+                            @click="mode = 'pending'"
+                        >
+                            <span class="type-label-lg">Pending</span>
+                        </button>
                     </div>
 
+                    <div class="changelog-box">
+
+                        <!-- CHANGELOG -->
+                        <template v-if="mode === 'changelog'">
+                            <div v-for="entry in changelog" class="changelog-entry">
+                                <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
+                                <ul class="changelog-list">
+                                    <li v-for="change in entry.changes">
+                                        - <span v-html="formatChange(change)"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
+
+                        <!-- PENDING -->
+                        <template v-else>
+                            <div v-for="entry in pending" class="pending-entry">
+                                <p class="pending-text">
+                                    {{ entry.text }} places on {{ formatDate(entry.date) }}
+                                </p>
+                            </div>
+                        </template>
+
+                    </div>
 
                 </div>
             </div>
@@ -154,14 +183,13 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h2><a href="https://docs.google.com/document/d/13Tmtj1G1ydiBz4_banBFvjvMiIXlnpYhOzq-GMohPxs/edit?usp=sharing" target="_blank" style="color: var(--color-primary)">NARLL Guidelines</a></h2>
+                    <h2><a href="https://docs.google.com/document/d/13Tmtj1G1ydiBz4_banBFvjvMiIXlnpYhOzq-GMohPxs/edit?usp=sharing" target="_blank" style="color: blue; text-decoration: underline;">NARLL Guidelines</a></h2>
                     <h3>Notes:</h3>
                     <p>
                         The NARLL Website is in beta, so expect some stuff to be unfinished or bugged.
                     </p>
                     <p>
-                        Want the old spreadsheet version of the list? Here: <a href="https://docs.google.com/spreadsheets/d/1gsfQKeiUm-mlEayo3e4FskkvuFJtIPjF_ad18j9q9XI">spreadsheet</a>
-                    </p>
+                        Want the old spreadsheet version of the list? Here: <a href="https://docs.google.com/spreadsheets/d/1gsfQKeiUm-mlEayo3e4FskkvuFJtIPjF_ad18j9q9XI" target="_blank" style="color: blue; text-decoration: underline;">spreadsheet</a>
                 </div>
             </div>
         </main>
@@ -169,8 +197,10 @@ export default {
     data: () => ({
         list: [],
         editors: [],
-        changelog: [],
         loading: true,
+        mode: "changelog",
+        pending: [],
+        changelog: [], 
         errors: [],
         roleIconMap,
         store,
@@ -178,9 +208,12 @@ export default {
         search: "",
     }),
     computed: {
+        recordCountText() {
+            const n = this.level?.records?.length;
+            return n ? ` (${n})` : '';
+        },
         level() {
-            if (store.selected === null) return null;
-            return this.filteredList[store.selected]?.[0];
+            return this.list[store.selected]?.[0];
         },
         filteredList() {
             if (!this.search) {
@@ -211,7 +244,9 @@ export default {
         // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
+
         this.changelog = await fetchChangelog();
+        this.pending = await fetchPending();
 
         // Error handling
         if (!this.list) {
@@ -244,7 +279,6 @@ export default {
                 this.copied = false;
             }, 1000);
         },
-
         formatDate(date) {
         return new Date(date).toLocaleDateString('en-GB', {
             day: '2-digit',
@@ -252,7 +286,11 @@ export default {
             year: 'numeric'
             });
         },
-
+        formatChange(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+                .replace(/\*(.*?)\*/g, "<i>$1</i>");
+        },
     },
     watch: {
         search() {

@@ -182,3 +182,12 @@ export async function fetchChangelog(){
         return null;
     }
 }
+
+export async function fetchChangelog(){
+    try {
+        const res = await fetch('/dataextra/pending.json');
+        return await res.json();
+    } catch{
+        return null;
+    }
+}
