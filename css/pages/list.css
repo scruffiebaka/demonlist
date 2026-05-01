@@ -308,6 +308,17 @@
     border-bottom-color: var(--color-on-primary);
 }
 
+.page-list .level-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.page-list .level-container .level {
+    overflow-y: auto;
+    max-height: 100%;
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
