@@ -73,7 +73,6 @@ main {
     
     display: grid;
     grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16rem, 1fr);
-    grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
 
     background-color: var(--color-background);
@@ -81,7 +80,7 @@ main {
 }
 
 main > div {
-    overflow-y: auto;
+    overflow-y: visible;
 }
 
 .spinner {
