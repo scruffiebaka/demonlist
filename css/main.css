@@ -69,10 +69,11 @@ header .nav__actions {
 /* MAIN */
 main {
     flex: 1;
-    min-height: 0; /* IMPORTANT for scroll containers */
+    min-height: 100%;
     
     display: grid;
     grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16rem, 1fr);
+    grid-template-rows: auto;
     column-gap: 2rem;
 
     background-color: var(--color-background);
@@ -80,7 +81,8 @@ main {
 }
 
 main > div {
-    overflow-y: visible;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .spinner {
