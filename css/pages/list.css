@@ -308,15 +308,13 @@
     border-bottom-color: var(--color-on-primary);
 }
 
-.page-list .level-container {
+.page-list .level.welcome {
     display: flex;
     flex-direction: column;
-    min-height: 0;
-}
-
-.page-list .level-container .level {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
     overflow-y: auto;
-    max-height: 100%;
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
