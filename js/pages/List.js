@@ -107,7 +107,7 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else-if="store.selected == null" class="level" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+                <div v-else-if="store.selected == null" class="level welcome">
                     <h2>Welcome to the New Angels Republic Level List!</h2>
                     <p>On your left is the level list, click any level to know more about it!</p>
                     <p>On your right are the list editors and the guidelines to submitting records and levels!</p>
