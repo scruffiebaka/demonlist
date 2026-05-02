@@ -385,6 +385,38 @@
   color: #2ecc71;
 }
 
+.sort-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.6rem;
+    background: var(--bg-secondary);
+    
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+.sort-filter input,
+.sort-filter select,
+.sort-filter button {
+    height: 32px;
+    padding: 0 0.5rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.sort-filter button {
+    cursor: pointer;
+}
+
+.sort-filter button:hover {
+    background: var(--bg-hover);
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
