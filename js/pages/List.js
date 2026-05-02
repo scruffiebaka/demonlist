@@ -30,7 +30,11 @@ export default {
                         class="search-bar"
                     />
 
-                    <div class="sort-filter">
+                    <button @click="showFilters = !showFilters" class="filter-toggle">
+                        ☰
+                    </button>
+
+                    <div v-if="showFilters" class="sort-filter">
                         <select v-model="sortBy">
                             <option :value="null">None</option>
                             <option value="name">Name</option>
@@ -187,6 +191,8 @@ export default {
         store,
         copied: false,
         search: "",
+
+        showFilters: false,
         sortBy: null,
         sortDir: "asc",
         filters: {

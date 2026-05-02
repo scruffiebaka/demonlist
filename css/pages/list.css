@@ -392,7 +392,7 @@
     padding: 0.4rem 0.6rem;
     border-radius: 0.6rem;
     background: var(--bg-secondary);
-    
+
     flex-wrap: wrap;
     max-width: 500px;
 }
@@ -415,6 +415,55 @@
 
 .sort-filter button:hover {
     background: var(--bg-hover);
+}
+
+.sort-filter input,
+.sort-filter select {
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    outline: none;
+    transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sort-filter input:focus,
+.sort-filter select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.15);
+}
+
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-toggle {
+    height: 32px;
+    padding: 0 0.7rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    cursor: pointer;
+}
+
+.filter-toggle:hover {
+    background: var(--bg-hover);
+}
+
+.sort-filter {
+    margin-top: 0.5rem;
+    animation: fadeSlide 0.2s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
