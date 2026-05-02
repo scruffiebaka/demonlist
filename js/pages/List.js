@@ -43,7 +43,7 @@ export default {
                         </select>
 
                         <button @click="sortDir = sortDir === 'asc' ? 'desc' : 'asc'">
-                            {{ sortDir === 'asc' ? '↑' : '↓' }}
+                            {{ sortDir === 'asc' ? '⬆️' : '⬇️' }}
                         </button>
 
                         <button @click="clearFilters">Clear</button>

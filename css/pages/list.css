@@ -394,9 +394,10 @@
     border-radius: 0.6rem;
     background-color: var(--color-background);
     color: var(--color-on-background);
-
     flex-wrap: wrap;
     max-width: 500px;
+    margin-top: 0.5rem;
+    animation: fadeSlide 0.2s ease;
 }
 
 .sort-filter input,
@@ -405,29 +406,30 @@
     height: 32px;
     padding: 0 0.5rem;
     border-radius: 0.4rem;
-    border: 1px solid #dfdfdf;
-    background-color: var(--color-on-primary);
-    color: var(--color-on-primary);
-    font-size: 0.85rem;
-
-    box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
-    transition: transform 100ms ease;
-}
-
-.sort-filter button {
-    cursor: pointer;
-}
-
-.sort-filter input,
-.sort-filter select {
     border: 1.5px solid #666;
-    color: var(--color-on-primary);
-    transition: border 0.15s ease, box-shadow 0.15s ease;
-    color: #fff;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
+    transition: border 0.15s ease, box-shadow 0.15s ease, transform 100ms ease;
+}
+
+.sort-filter input {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 }
 
 .sort-filter input::placeholder {
     color: #aaa;
+}
+
+.sort-filter select {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.sort-filter button {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
 }
 
 .search-box {
@@ -444,11 +446,6 @@
     background-color: var(--color-background);
     color: var(--color-on-background);
     cursor: pointer;
-}
-
-.sort-filter {
-    margin-top: 0.5rem;
-    animation: fadeSlide 0.2s ease;
 }
 
 @keyframes fadeSlide {
