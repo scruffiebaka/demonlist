@@ -463,7 +463,21 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.sort-filter {
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 0;
+}
+
+.filter-toggle {
+    flex-shrink: 0;
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
