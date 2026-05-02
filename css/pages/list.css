@@ -415,10 +415,6 @@
     cursor: pointer;
 }
 
-.sort-filter button:hover {
-    background-color: var(--color-primary);
-}
-
 .sort-filter input,
 .sort-filter select {
     border: 1.5px solid #666;
