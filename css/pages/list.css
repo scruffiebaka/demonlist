@@ -480,6 +480,13 @@
     flex-shrink: 0;
 }
 
+.sort-filter button,
+.sort-filter input,
+.sort-filter select,
+.filter-toggle {
+    font-family: 'Lexend', sans-serif;
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
