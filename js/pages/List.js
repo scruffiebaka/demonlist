@@ -22,45 +22,35 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-            <div class="search-box">
-                <input 
-                    type="text" 
-                    v-model="search" 
-                    placeholder="Search levels..." 
-                    class="search-bar"
-                />
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        v-model="search" 
+                        placeholder="Search levels..." 
+                        class="search-bar"
+                    />
 
-                <div class="sort-filter">
-                    <select v-model="sortBy">
-                        <option value="name">Name</option>
-                        <option value="enjoyment">Enjoyment</option>
-                        <option value="victors">Victors</option>
-                        <option value="feature">Feature</option>
-                    </select>
+                    <div class="sort-filter">
+                        <select v-model="sortBy">
+                            <option :value="null">None</option>
+                            <option value="name">Name</option>
+                            <option value="enjoyment">Enjoyment</option>
+                            <option value="victors">Victors</option>
+                        </select>
 
-                    <button @click="sortDir = sortDir === 'asc' ? 'desc' : 'asc'">
-                        {{ sortDir === 'asc' ? '↑' : '↓' }}
-                    </button>
+                        <button @click="sortDir = sortDir === 'asc' ? 'desc' : 'asc'">
+                            {{ sortDir === 'asc' ? '↑' : '↓' }}
+                        </button>
 
-                    <input v-model="filters.creator" placeholder="Creator" />
+                        <button @click="clearFilters">Clear</button>
 
-                    <input type="number" v-model.number="filters.enjoymentMin" placeholder="Min Enjoyment" />
-                    <input type="number" v-model.number="filters.enjoymentMax" placeholder="Max Enjoyment" />
+                        <input v-model="filters.creator" placeholder="Creator" />
 
-                    <label>
-                        <input type="checkbox" v-model="filters.feature.top"> Top
-                    </label>
-                    <label>
-                        <input type="checkbox" v-model="filters.feature.featured"> Featured
-                    </label>
-                    <label>
-                        <input type="checkbox" v-model="filters.feature.award"> Award
-                    </label>
-                    <label>
-                        <input type="checkbox" v-model="filters.feature.none"> None
-                    </label>
+                        <input type="number" v-model.number="filters.enjoymentMin" placeholder="Min Enjoyment" />
+                        <input type="number" v-model.number="filters.enjoymentMax" placeholder="Max Enjoyment" />
+                    </div>
                 </div>
-            </div>
+
                 <table class="list" v-if="list">
                     <tr v-for="([level, err, originalIndex], i) in filteredList">
                         <td class="rank">
@@ -69,53 +59,50 @@ export default {
                         </td>
                         <td 
                             class="level" 
-                            :class="[
-                                { 'active': store.selected == originalIndex, 'error': !level },
-                                {
-                                'level-top': level?.featured === 'top',
-                                'level-featured': level?.featured === 'featured',
-                                'level-angel': level?.featured === 'award'
-                                }
-                            ]"
+                            :class="{ 'active': store.selected == originalIndex, 'error': !level }"
                         >
                             <button @click="store.selected = originalIndex">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                <span class="type-label-lg">{{ level?.name || ('Error (' + err + '.json)') }}</span>
                             </button>
                         </td>
                     </tr>
                 </table>
+
                 <p v-if="filteredList.length === 0">
                     No results found.
                 </p>
             </div>
+
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
+
                     <div class="tags" v-if="level.tags">
                         <div class="type-title-sm">Tags</div>
-                        <p>{{ level.tags || NA }}</p>
+                        <p>{{ level.tags || "NA" }}</p>
                     </div>
+
                     <div class="enjoyment">
-                    <div class="type-title-sm">Enjoyment</div>
+                        <div class="type-title-sm">Enjoyment</div>
 
-                    <div class="id-copy">
-                        <p>
-                        <span class="score" :class="enjoymentClass(level.enjoyment)">
-                            {{ formatEnjoyment(level.enjoyment) }}
-                        </span>
+                        <div class="id-copy">
+                            <p>
+                                <span class="score" :class="enjoymentClass(level.enjoyment)">
+                                    {{ formatEnjoyment(level.enjoyment) }}
+                                </span>
+                                <span v-if="level.enjoyment !== null && level.enjoyment !== ''" class="outof">/10</span>
+                            </p>
 
-                        <span v-if="level.enjoyment !== null && level.enjoyment !== ''" class="outof">
-                            /10
-                        </span>
-                        </p>
-
-                        <span v-if="!level.enjoyment || level.enjoyment === ''" class="tooltip">
-                        This level does not have enough victors
-                        </span>
+                            <span v-if="!level.enjoyment || level.enjoyment === ''" class="tooltip">
+                                This level does not have enough victors
+                            </span>
+                        </div>
                     </div>
-                    </div>
+
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points granted</div>
@@ -140,19 +127,21 @@ export default {
                             </div>
                         </li>
                     </ul>
+
                     <p>Notes: {{ level.notes }}</p>
+
                     <h2>Records{{ recordCountText }}</h2>
+
                     <p v-if="store.selected + 1 > 50">This level does not accept new records.</p>
+
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
-                            <td class="percent">
-                                <p>{{ record.percent }}%</p>
-                            </td>
+                            <td class="percent"><p>{{ record.percent }}%</p></td>
                             <td class="user">
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                                <img v-if="record.mobile" :src="'/assets/phone-landscape' + (store.dark ? '-dark' : '') + '.svg'">
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz === 0 ? 'NA' : record.hz + 'Hz' }}</p>
@@ -160,78 +149,28 @@ export default {
                         </tr>
                     </table>
                 </div>
+
                 <div v-else-if="store.selected == null" class="level welcome">
                     <h2>Welcome to the New Angels Republic Level List!</h2>
-                    <p>On your left is the level list, click any level to know more about it!</p>
-                    <p>On your right are the list editors and the guidelines to submitting records and levels!</p>
-                    <h3>About</h3>
-                    <p>
-                        This is the official list for the New Angel's Republic Discord Server.
-                        The website is a modified version of TSL. 
-                    </p>
-                    <p>
-                        Levels highlighted in light pink are Featured, dark purple are Top Featured, and special colored are awarded the Angel Award.
-                    </p>
-                    <p>
-                        Have fun and don't forget to join the discord! :3
-                    </p>
-
-                     <div class="nav selector">
-                        <button 
-                            class="nav__tab" 
-                            :class="{ 'active-tab': mode === 'changelog' }" 
-                            @click="mode = 'changelog'"
-                        >
-                            <span class="type-label-lg">Changelog</span>
-                        </button>
-
-                        <button 
-                            class="nav__tab" 
-                            :class="{ 'active-tab': mode === 'pending' }" 
-                            @click="mode = 'pending'"
-                        >
-                            <span class="type-label-lg">Pending</span>
-                        </button>
-                    </div>
-
-                    <div class="changelog-box">
-                        <template v-if="mode === 'changelog'">
-                            <div v-for="entry in changelog" class="changelog-entry">
-                                <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
-                                <ul class="changelog-list">
-                                    <li v-for="change in entry.changes">
-                                        - <span v-html="formatChange(change)"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </template>
-
-                        <template v-else>
-                            <div v-for="entry in pending" class="changelog-entry">
-                                <p class="changelog-list">
-                                    - <span v-html="formatChange(entry.text)"></span> places on {{ formatDate(entry.date) }}
-                                </p>
-                            </div>
-                        </template>
-                    </div>
                 </div>
             </div>
+
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
+
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
+                                <img :src="'/assets/' + roleIconMap[editor.role] + (store.dark ? '-dark' : '') + '.svg'">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
                         </ol>
                     </template>
-                      <h2><a href="https://docs.google.com/document/d/1_xeCrzN2xmG1X5PQix6BEqDfBCg22rB08TNjXyRXg4M/edit?usp=sharing" target="_blank" style="color: blue; text-decoration: underline;">NARLL Guidelines</a></h2>
                 </div>
             </div>
         </main>
@@ -242,25 +181,18 @@ export default {
         loading: true,
         mode: "changelog",
         pending: [],
-        changelog: [], 
+        changelog: [],
         errors: [],
         roleIconMap,
         store,
         copied: false,
         search: "",
-        sortBy: "name",
-
+        sortBy: null,
         sortDir: "asc",
         filters: {
             creator: "",
             enjoymentMin: null,
-            enjoymentMax: null,
-            feature: {
-                top: true,
-                featured: true,
-                award: true,
-                none: true,
-            }
+            enjoymentMax: null
         }
     }),
     computed: {
@@ -297,30 +229,21 @@ export default {
                 return true;
             });
 
-            arr = arr.filter(([level]) => {
-                const f = level?.featured || "none";
-                if (f === "top") return this.filters.feature.top;
-                if (f === "featured") return this.filters.feature.featured;
-                if (f === "award") return this.filters.feature.award;
-                return this.filters.feature.none;
-            });
+            if (this.sortBy) {
+                const dir = this.sortDir === "asc" ? 1 : -1;
 
-
-            const dir = this.sortDir === "asc" ? 1 : -1;
-
-            arr.sort(([a], [b]) => {
-                switch (this.sortBy) {
-                    case "name":
-                        return dir * (a.name || "").localeCompare(b.name || "");
-                    case "enjoyment":
-                        return dir * ((a.enjoyment ?? -1) - (b.enjoyment ?? -1));
-                    case "victors":
-                        return dir * ((a.records?.length ?? 0) - (b.records?.length ?? 0));
-                    case "feature":
-                        return dir * ((a.featured || "").localeCompare(b.featured || ""));
-                }
-                return 0;
-            });
+                arr.sort(([a], [b]) => {
+                    switch (this.sortBy) {
+                        case "name":
+                            return dir * (a.name || "").localeCompare(b.name || "");
+                        case "enjoyment":
+                            return dir * ((a.enjoyment ?? -1) - (b.enjoyment ?? -1));
+                        case "victors":
+                            return dir * ((a.records?.length ?? 0) - (b.records?.length ?? 0));
+                    }
+                    return 0;
+                });
+            }
 
             return arr;
         },
@@ -329,37 +252,17 @@ export default {
                 return embed(this.level.verification);
             }
 
-            return embed(
-                this.toggledShowcase
-                    ? this.level.showcase
-                    : this.level.verification
-            );
-        },
+            return embed(this.level.verification);
+        }
     },
     async mounted() {
-        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
-
         this.changelog = await fetchChangelog();
         this.pending = await fetchPending();
 
-        // Error handling
         if (!this.list) {
-            this.errors = [
-                "Failed to load list. Retry in a few minutes or notify list staff.",
-            ];
-        } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
-            if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
-            }
+            this.errors = ["Failed to load list."];
         }
 
         this.loading = false;
@@ -370,22 +273,7 @@ export default {
         copyText(text) {
             navigator.clipboard.writeText(text);
             this.copied = true;
-
-            setTimeout(() => {
-                this.copied = false;
-            }, 1000);
-        },
-        formatDate(date) {
-        return new Date(date).toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-            });
-        },
-        formatChange(text) {
-            return text
-                .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
-                .replace(/\*(.*?)\*/g, "<i>$1</i>");
+            setTimeout(() => this.copied = false, 1000);
         },
         formatEnjoyment(val) {
             if (val === null || val === undefined || val === "") return "NA";
@@ -394,15 +282,23 @@ export default {
         enjoymentClass(val) {
             const n = Number(val);
             if (isNaN(n)) return "";
-
             if (n <= 4) return "enjoyment--bad";
             if (n < 7) return "enjoyment--mid";
             return "enjoyment--good";
+        },
+        clearFilters() {
+            this.search = "";
+            this.sortBy = null;
+            this.sortDir = "asc";
+            this.filters.creator = "";
+            this.filters.enjoymentMin = null;
+            this.filters.enjoymentMax = null;
+            this.store.selected = null;
         }
     },
     watch: {
         search() {
             store.selected = null;
         }
-    },
+    }
 };
