@@ -31,7 +31,7 @@ export default {
                     />
 
                     <button @click="showFilters = !showFilters" class="filter-toggle">
-                        ☰
+                        <img src="/assets/filter.svg" alt="Filters">
                     </button>
 
                     <div v-if="showFilters" class="sort-filter">
