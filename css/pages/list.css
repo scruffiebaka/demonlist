@@ -484,17 +484,7 @@
 .sort-filter input,
 .sort-filter select,
 .filter-toggle {
-    font-family: 'Lexend', sans-serif !important;
-}
-
-.sort-filter * {
-    font-family: 'Lexend', sans-serif !important;
-}
-
-.sort-filter select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    font-family: "Lexend Deca", sans-serif;
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
