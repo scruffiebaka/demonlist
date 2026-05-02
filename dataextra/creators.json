@@ -1,35 +1,52 @@
 [
   {
     "user": "Rosieel",
+    "points": 9,
+    "featured": [
+      "\u2605 Spaceless Unleashed \u2605",
+      "\u2605 Destined \u2605",
+      "\u2605 spaceless \u2605"
+    ],
+    "best": "\u2605 spaceless \u2605"
+  },
+  {
+    "user": "DeadXM",
     "points": 6,
     "featured": [
-      "135454335",
-      "134649177"
+      "\u2726 PRETTY THINGS \u2726"
     ],
-    "best": "134649177"
+    "best": "\u2726 PRETTY THINGS \u2726"
   },
   {
     "user": "miles",
     "points": 6,
     "featured": [
-      "135417369"
+      "\u2726 scary scary gabe \u2726"
     ],
-    "best": "135417369"
+    "best": "\u2726 scary scary gabe \u2726"
   },
   {
     "user": "aqrlr",
     "points": 3,
     "featured": [
-      "135394064"
+      "\u2605 AREA 33 \u2605"
     ],
-    "best": "135394064"
+    "best": "\u2605 AREA 33 \u2605"
   },
   {
     "user": "blue_orbe",
     "points": 3,
     "featured": [
-      "134946991"
+      "\u2605 LXVI \u2605"
     ],
-    "best": "134946991"
+    "best": "\u2605 LXVI \u2605"
+  },
+  {
+    "user": "EternalUMI",
+    "points": 3,
+    "featured": [
+      "\u2605 71a3 \u2605"
+    ],
+    "best": "\u2605 71a3 \u2605"
   }
 ]

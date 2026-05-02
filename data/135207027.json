@@ -4,13 +4,14 @@
   "featured": "",
   "name": "bladeawamba",
   "author": "itsGalaxie",
-  "tags": "2 Player, Memory",
+  "tags": "2-Player, Memory",
+  "enjoyment": "",
   "notes": "",
   "creators": [
     "itsGalaxie"
   ],
   "verifier": "xeo_o",
-  "verification": "https://youtu.be/91qqTAFh1Iw",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
   "records": [
     {
       "user": "mold",
@@ -30,5 +31,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

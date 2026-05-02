@@ -4,7 +4,8 @@
   "featured": "",
   "name": "so soggy in here",
   "author": "sznapis",
-  "tags": "Fast-paced, All-around, Learny",
+  "tags": "Fast-paced, Overall, Learny",
+  "enjoyment": "6.31",
   "notes": "",
   "creators": [
     "sznapis"
@@ -23,6 +24,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Zequori",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

@@ -5,12 +5,13 @@
   "name": "turn the lights on",
   "author": "abr0611",
   "tags": "Ship",
-  "notes": " is this easy or sum bro",
+  "enjoyment": "5.94",
+  "notes": "",
   "creators": [
     "abr0611"
   ],
   "verifier": "ivory",
-  "verification": "https://www.youtube.com/watch?v=N6tDI4qDeQE",
+  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
   "records": [
     {
       "user": "mold",
@@ -19,7 +20,7 @@
       "hz": 0
     },
     {
-      "user": "amylova",
+      "user": "amy",
       "link": "",
       "percent": 100,
       "hz": 0
@@ -35,6 +36,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": "yes"
 }

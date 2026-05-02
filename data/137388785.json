@@ -4,8 +4,9 @@
   "featured": "",
   "name": "Final Aggression",
   "author": "lrexx",
-  "tags": "icedcave wave",
-  "notes": "",
+  "tags": "Wave, Cube",
+  "enjoyment": "6.5",
+  "notes": "secret top 5 ngl",
   "creators": [
     "lrexx"
   ],
@@ -17,6 +18,13 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

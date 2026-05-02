@@ -13,7 +13,7 @@ export default {
         <main v-else class="page-roulette">
             <div class="sidebar">
                 <p class="type-label-md" style="color: #aaa">
-                    Shameless copy of the Extreme Demon Roulette by <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
+                    Modified version of Extreme Demon Roulette by <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
                 </p>
                 <form class="options">
                     <div class="check">
@@ -21,8 +21,8 @@ export default {
                         <label for="main">Main List</label>
                     </div>
                     <div class="check">
-                        <input type="checkbox" id="extended" value="Extended List" v-model="useExtendedList">
-                        <label for="extended">Extended List</label>
+                        <input type="checkbox" id="legacy" value="Legacy List" v-model="useLegacyList">
+                        <label for="legacy">Legacy List</label>
                     </div>
                     <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Start' : 'Restart'}}</Btn>
                 </form>
@@ -92,8 +92,8 @@ export default {
                     <h1>Congratulations!!</h1>
                     <p>You finished the roulette! Heres your reward!</p>
 
-                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0?autoplay=1" target="_blank" class="reward-link">
-                        https://www.youtube.com/watch?v=oHg5SJYRHA0
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1" target="_blank" class="reward-link">
+                        https://www.youtube.com/watch?v=dQw4w9WgXcQ
                     </a>
 
                     <Btn @click.native="showDialog = false">Close</Btn>
@@ -119,7 +119,7 @@ export default {
         givenUp: false,
         showRemaining: false,
         useMainList: true,
-        useExtendedList: true,
+        useLegacyList: true,
         toasts: [],
         fileInput: undefined,
         showDialog: false,
@@ -159,7 +159,8 @@ export default {
         },
         targetPercentage() {
             const steps = this.stepIncrements;
-            return steps.slice(0, this.progression.length + 1).reduce((a, b) => a + b, 0);
+            const nextStep = steps[this.progression.length] || 0;
+            return Math.min(100, this.currentPercentage + nextStep);
         },
         placeholder() {
             return `At least ${this.targetPercentage}%`;
@@ -188,7 +189,7 @@ export default {
                 return;
             }
 
-            if (!this.useMainList && !this.useExtendedList) return;
+            if (!this.useMainList && !this.useLegacyList) return;
 
             this.loading = true;
 
@@ -208,8 +209,8 @@ export default {
             }));
 
             const list = [];
-            if (this.useMainList) list.push(...fullListMapped.slice(0, 75));
-            if (this.useExtendedList) list.push(...fullListMapped.slice(75, 150));
+            if (this.useMainList) list.push(...fullListMapped.slice(0, 50));
+            if (this.useLegacyList) list.push(...fullListMapped.slice(50));
 
             this.levels = shuffle(list).slice(0, 100);
             this.showRemaining = false;
@@ -236,7 +237,7 @@ export default {
                 return;
             }
 
-            this.progression.push(this.targetPercentage);
+            this.progression.push(this.percentage);
             this.percentage = undefined;
             this.save();
         },

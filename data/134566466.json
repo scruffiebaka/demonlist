@@ -4,13 +4,14 @@
   "featured": "",
   "name": "Memory Level II",
   "author": "aqrlr",
-  "tags": "Memory",
+  "tags": "Memory, Learny",
+  "enjoyment": "4.5",
   "notes": "",
   "creators": [
     "aqrlr"
   ],
   "verifier": "aqrlr",
-  "verification": "https://youtu.be/POrna4X6Ojs",
+  "verification": "https://youtu.be/r4Sfzxe-Kp4",
   "records": [
     {
       "user": "mold",
@@ -35,6 +36,13 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

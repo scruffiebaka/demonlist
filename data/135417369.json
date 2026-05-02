@@ -4,7 +4,8 @@
   "featured": "top",
   "name": "\u2726 scary scary gabe \u2726",
   "author": "miles",
-  "tags": "Cube, Timings",
+  "tags": "Cube, Ship, Timings",
+  "enjoyment": "6.83",
   "notes": " Miles Miles Miles Peak",
   "creators": [
     "miles"
@@ -31,7 +32,7 @@
       "hz": 0
     },
     {
-      "user": "amylova",
+      "user": "amy",
       "link": "",
       "percent": 100,
       "hz": 0
@@ -53,6 +54,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "Zequori",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineraljk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

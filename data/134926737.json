@@ -3,13 +3,14 @@
   "length": "0:21",
   "featured": "",
   "name": "pollux \uD83E\uDD8B",
-  "author": "amylova",
+  "author": "amy",
   "tags": "Wave, Learny",
-  "notes": "\u003C\u003C castorice level ^_^",
+  "enjoyment": "7.5",
+  "notes": "castorice level ^_^",
   "creators": [
-    "amylova"
+    "amy"
   ],
-  "verifier": "amylova",
+  "verifier": "amy",
   "verification": "https://www.youtube.com/watch?v=zdzJdt8bsqg",
   "records": [
     {
@@ -29,6 +30,13 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

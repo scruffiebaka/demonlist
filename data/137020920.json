@@ -4,12 +4,21 @@
   "featured": "",
   "name": "Claustromorphic",
   "author": "danman",
-  "tags": "Unbalanced, Timings",
+  "tags": "Chokepoints, Timings",
+  "enjoyment": "",
   "notes": "im claustrophobic",
   "creators": [
     "danman"
   ],
   "verifier": "danman",
   "verification": "https://www.youtube.com/watch?v=a8SPZYhZON4",
-  "records": []
+  "records": [
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    }
+  ],
+  "nong": ""
 }

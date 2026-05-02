@@ -4,7 +4,8 @@
   "featured": "",
   "name": "avernus startpos 2",
   "author": "vex",
-  "tags": "Sync but its offset by 1 second",
+  "tags": "Click-Sync, Timings",
+  "enjoyment": "",
   "notes": "",
   "creators": [
     "vex"
@@ -59,6 +60,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "Zequori",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineraljk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

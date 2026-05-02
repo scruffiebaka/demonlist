@@ -5,6 +5,7 @@
   "name": "wisteria",
   "author": "wattiwatt",
   "tags": "Ship",
+  "enjoyment": "7.5",
   "notes": "",
   "creators": [
     "wattiwatt"
@@ -12,12 +13,6 @@
   "verifier": "mold",
   "verification": "https://youtu.be/X8GHl2rLQvM",
   "records": [
-    {
-      "user": "JohnHuman",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
     {
       "user": "Cala",
       "link": "",
@@ -30,5 +25,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

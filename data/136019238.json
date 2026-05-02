@@ -4,7 +4,8 @@
   "featured": "",
   "name": "Deception",
   "author": "Rosieel",
-  "tags": "Bad Transitions, All-Around",
+  "tags": "Overall, Timings",
+  "enjoyment": "6.64",
   "notes": "",
   "creators": [
     "Rosieel"
@@ -47,6 +48,25 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "amy",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineraljk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

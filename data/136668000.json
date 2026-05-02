@@ -4,12 +4,13 @@
   "featured": "",
   "name": "im at the club",
   "author": "scruffie",
-  "tags": "Wave, Wave",
+  "tags": "Wave",
+  "enjoyment": "8.18",
   "notes": "im at the CLUBBBB",
   "creators": [
     "scruffie"
   ],
-  "verifier": "amylova",
+  "verifier": "amy",
   "verification": "https://youtu.be/sULWkGNrQ6A",
   "records": [
     {
@@ -24,5 +25,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": "yes"
 }

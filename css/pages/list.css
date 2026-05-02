@@ -76,6 +76,16 @@
     font-size: 20px;
     line-height: 28px;
 }
+.page-list .level-container .level .enjoyment {
+    position: absolute;
+    top: 4.5rem;
+    right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
 .page-list .level-container .level .level-authors {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -153,7 +163,8 @@
 }
 
 .page-list .list .level.level-top button {
-    background: linear-gradient(90deg,rgba(129, 255, 202, 0.089) 0%, rgba(128, 13, 204, 0.233) 95%);
+    background-color: transparent;
+    background: linear-gradient(90deg,rgba(219, 156, 255, 0.4) 0%, rgba(157, 0, 255, 0.4) 85%);
     color: var(--color-on-background);
 }
 .page-list .list .level.level-top.active button {
@@ -162,10 +173,10 @@
 }
 
 .page-list .list .level.level-featured button {
-    background: linear-gradient(90deg, rgba(138, 255, 157, 0.062) 0%, rgba(115, 3, 119, 0.329) 80%);
     background-color: transparent;
+    background: linear-gradient(90deg,rgba(228, 191, 255, 0.3) 0%, rgba(226, 158, 232, 0.3) 70%);
+    color: var(--color-on-background);
 }
-
 .page-list .list .level.level-featured.active button {
     background: var(--color-primary);
     color: var(--color-on-primary);
@@ -200,6 +211,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.15s ease;
+    z-index: 9999;
 }
 
 .id-copy:hover .tooltip {
@@ -308,7 +320,73 @@
     border-bottom-color: var(--color-on-primary);
 }
 
+.page-list .level.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.nong-icon {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    isolation: isolate;
+    transform: translateY(4px);
+}
+
+.nong-icon img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.nong-icon .back {
+    z-index: 0;
+    animation: spin 5s linear infinite;
+}
+
+.nong-icon .front {
+    z-index: 1;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg) scale(1.5); }
+    to   { transform: rotate(360deg) scale(1.5); }
+}
+
+.page-list .level-container .level .enjoyment .id-copy .tooltip {
+    left: 50%;
+    transform: translateX(-108%) translateY(40%);
+}
+
+.enjoyment .score {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.enjoyment .outof {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.enjoyment--bad {
+  color: #e74c3c;
+}
+
+.enjoyment--mid {
+  color: #f1c40f;
+}
+
+.enjoyment--good {
+  color: #2ecc71;
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
 /* mold: p*/
+/* scruffie: yo what why r u here mold*/

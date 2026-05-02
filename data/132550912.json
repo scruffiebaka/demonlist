@@ -1,10 +1,11 @@
 {
   "id": 132550912,
   "length": "NA",
-  "featured": "",
-  "name": "71a3",
+  "featured": "featured",
+  "name": "\u2605 71a3 \u2605",
   "author": "EternalUMI",
   "tags": "NA",
+  "enjoyment": "6.83",
   "notes": "\u003C\u003C best wave level for beginners",
   "creators": [
     "EternalUMI"
@@ -65,6 +66,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "miles",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineraljk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": null
 }

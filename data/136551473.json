@@ -3,21 +3,16 @@
   "length": "0:06",
   "featured": "",
   "name": "anino",
-  "author": "amylova",
-  "tags": "Wave",
+  "author": "amy",
+  "tags": "Wave, Consistency",
+  "enjoyment": "5.9",
   "notes": "\u003C\u003C stupid level",
   "creators": [
-    "amylova"
+    "amy"
   ],
-  "verifier": "amylova",
+  "verifier": "amy",
   "verification": "https://youtu.be/Sckg2Bo8t38",
   "records": [
-    {
-      "user": "JohnHuman",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
     {
       "user": "mold",
       "link": "",
@@ -29,6 +24,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

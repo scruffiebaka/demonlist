@@ -5,6 +5,7 @@
   "name": "Quantum Whatcessing",
   "author": "itsGalaxie",
   "tags": "NA",
+  "enjoyment": "5.4",
   "notes": "The bottom of the NARLL, its very cool!",
   "creators": [
     "itsGalaxie"
@@ -61,7 +62,103 @@
       "hz": 0
     },
     {
-      "user": "Zeque",
+      "user": "Zequori",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "nich",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "vex",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "abo",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Widest",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mold",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "druki",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "skalz",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "azurewattiwatt",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "z_Fear_",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Blooddrop",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "EternalUMI",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Forebitt",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "sznapis",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mi11ionplayz",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Zequori",
       "link": "",
       "percent": 100,
       "hz": 0
@@ -114,5 +211,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": null
 }

@@ -5,6 +5,7 @@
   "name": "squid riot simulator",
   "author": "danman",
   "tags": "2-Player",
+  "enjoyment": "",
   "notes": "",
   "creators": [
     "danman"
@@ -18,5 +19,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

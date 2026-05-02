@@ -1,34 +1,17 @@
 {
   "id": 131938987,
-  "length": "0:30",
+  "length": "0:27",
   "featured": "",
   "name": "hexa ever clear",
   "author": "wattiwatt",
   "tags": "Timings",
+  "enjoyment": "5.92",
   "notes": "bruh i think hexa never cleared",
   "creators": [
     "wattiwatt"
   ],
-  "verifier": "xeo_o",
+  "verifier": "wattiwatt",
   "verification": "https://youtu.be/SpHXAk4QYg8",
-  "records": [
-    {
-      "user": "Cala",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
-    {
-      "user": "mold",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
-    {
-      "user": "wattiwatt",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    }
-  ]
+  "records": [],
+  "nong": ""
 }

@@ -4,7 +4,8 @@
   "featured": "",
   "name": "ifasteio anglou",
   "author": "mold",
-  "tags": "Sync",
+  "tags": "Click-Sync",
+  "enjoyment": "7.83",
   "notes": " best level ever !!!1!1!!!!!!",
   "creators": [
     "mold"
@@ -17,6 +18,13 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "humptwe",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

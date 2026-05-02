@@ -5,12 +5,13 @@
   "name": "envy",
   "author": "rosieel",
   "tags": "NA",
+  "enjoyment": "6.75",
   "notes": "",
   "creators": [
     "rosieel"
   ],
   "verifier": "rosieel",
-  "verification": "https://www.youtube.com/watch?v=JLUHNV2zcV4",
+  "verification": "https://youtu.be/zZjFrdkyED0",
   "records": [
     {
       "user": "mold",
@@ -20,6 +21,12 @@
     },
     {
       "user": "vex",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "amy",
       "link": "",
       "percent": 100,
       "hz": 0
@@ -59,6 +66,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineralijk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": null
 }

@@ -5,6 +5,7 @@
   "name": "the sog files",
   "author": "itsGalaxie",
   "tags": "NA",
+  "enjoyment": "8.27",
   "notes": "\u003C\u003C move up?",
   "creators": [
     "itsGalaxie"
@@ -23,6 +24,31 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "Gaseba",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "Zequori",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "xeo_o",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineralijk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": null
 }

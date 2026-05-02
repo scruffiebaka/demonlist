@@ -1,10 +1,11 @@
 {
   "id": 132659505,
-  "length": "NA",
+  "length": "0:10",
   "featured": "",
   "name": "sog v2 jellicide",
   "author": "Sevras",
-  "tags": "NA",
+  "tags": "Duals, High-CPS",
+  "enjoyment": "7.63",
   "notes": "",
   "creators": [
     "Sevras"
@@ -67,10 +68,11 @@
       "hz": 0
     },
     {
-      "user": "rosieel",
+      "user": "mineraljk",
       "link": "",
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

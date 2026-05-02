@@ -4,7 +4,8 @@
   "featured": "",
   "name": "overdose",
   "author": "FearFlora",
-  "tags": "Fast-paced, High CPS, Learny",
+  "tags": "Fast-paced, High-CPS, Click-Sync",
+  "enjoyment": "5",
   "notes": "FUN FUN FUN FUN FUN",
   "creators": [
     "FearFlora"
@@ -25,10 +26,11 @@
       "hz": 0
     },
     {
-      "user": "amylova",
+      "user": "humptwe",
       "link": "",
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

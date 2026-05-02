@@ -1,11 +1,7 @@
-/* Only tiny tweaks — everything else comes from list.css */
-
-/* Right panel (levels list) spacing */
 .meta-container {
     padding-left: 1rem;
 }
 
-/* Optional: make right list scrollable */
 .meta-container {
     max-height: 80vh;
     overflow-y: auto;

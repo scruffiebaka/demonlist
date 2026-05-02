@@ -4,7 +4,8 @@
   "featured": "",
   "name": "elixir of despair",
   "author": "vex",
-  "tags": "Wave, Unbalanced",
+  "tags": "Wave, Chokepoints",
+  "enjoyment": "5.2",
   "notes": "",
   "creators": [
     "vex"
@@ -36,5 +37,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

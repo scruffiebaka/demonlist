@@ -29,6 +29,37 @@ export default {
                     placeholder="Search levels..." 
                     class="search-bar"
                 />
+
+                <div class="sort-filter">
+                    <select v-model="sortBy">
+                        <option value="name">Name</option>
+                        <option value="enjoyment">Enjoyment</option>
+                        <option value="victors">Victors</option>
+                        <option value="feature">Feature</option>
+                    </select>
+
+                    <button @click="sortDir = sortDir === 'asc' ? 'desc' : 'asc'">
+                        {{ sortDir === 'asc' ? '↑' : '↓' }}
+                    </button>
+
+                    <input v-model="filters.creator" placeholder="Creator" />
+
+                    <input type="number" v-model.number="filters.enjoymentMin" placeholder="Min Enjoyment" />
+                    <input type="number" v-model.number="filters.enjoymentMax" placeholder="Max Enjoyment" />
+
+                    <label>
+                        <input type="checkbox" v-model="filters.feature.top"> Top
+                    </label>
+                    <label>
+                        <input type="checkbox" v-model="filters.feature.featured"> Featured
+                    </label>
+                    <label>
+                        <input type="checkbox" v-model="filters.feature.award"> Award
+                    </label>
+                    <label>
+                        <input type="checkbox" v-model="filters.feature.none"> None
+                    </label>
+                </div>
             </div>
                 <table class="list" v-if="list">
                     <tr v-for="([level, err, originalIndex], i) in filteredList">
@@ -64,9 +95,24 @@ export default {
                         <div class="type-title-sm">Tags</div>
                         <p>{{ level.tags || NA }}</p>
                     </div>
-                    <div class="enjoyment" v-if="level.enjoyment">
-                        <div class="type-title-sm">Enjoyment</div>
-                        <p>{{ level.enjoyment || NA }}</p>
+                    <div class="enjoyment">
+                    <div class="type-title-sm">Enjoyment</div>
+
+                    <div class="id-copy">
+                        <p>
+                        <span class="score" :class="enjoymentClass(level.enjoyment)">
+                            {{ formatEnjoyment(level.enjoyment) }}
+                        </span>
+
+                        <span v-if="level.enjoyment !== null && level.enjoyment !== ''" class="outof">
+                            /10
+                        </span>
+                        </p>
+
+                        <span v-if="!level.enjoyment || level.enjoyment === ''" class="tooltip">
+                        This level does not have enough victors
+                        </span>
+                    </div>
                     </div>
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
@@ -85,6 +131,13 @@ export default {
                         <li>
                             <div class="type-title-sm">Length</div>
                             <p>{{ level.length }}</p>
+                        </li>
+                        <li v-if="level.nong === 'yes'">
+                            <div class="id-copy nong-icon">
+                                <img src="/assets/nong/back.png" class="back">
+                                <img src="/assets/nong/front.png" class="front">
+                                <span class="tooltip">This level uses a NONG</span>
+                            </div>
                         </li>
                     </ul>
                     <p>Notes: {{ level.notes }}</p>
@@ -107,7 +160,7 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else-if="store.selected == null" class="level" style="height: 100%; display: flex; justify-content: center; align-items: center; text-align: center;">
+                <div v-else-if="store.selected == null" class="level welcome">
                     <h2>Welcome to the New Angels Republic Level List!</h2>
                     <p>On your left is the level list, click any level to know more about it!</p>
                     <p>On your right are the list editors and the guidelines to submitting records and levels!</p>
@@ -123,7 +176,7 @@ export default {
                         Have fun and don't forget to join the discord! :3
                     </p>
 
-                    <div class="nav selector">
+                     <div class="nav selector">
                         <button 
                             class="nav__tab" 
                             :class="{ 'active-tab': mode === 'changelog' }" 
@@ -142,8 +195,6 @@ export default {
                     </div>
 
                     <div class="changelog-box">
-
-                        <!-- CHANGELOG -->
                         <template v-if="mode === 'changelog'">
                             <div v-for="entry in changelog" class="changelog-entry">
                                 <h3 class="changelog-date">{{ formatDate(entry.date) }}</h3>
@@ -155,17 +206,14 @@ export default {
                             </div>
                         </template>
 
-                        <!-- PENDING -->
                         <template v-else>
-                            <div v-for="entry in pending" class="pending-entry">
-                                <p class="pending-text">
+                            <div v-for="entry in pending" class="changelog-entry">
+                                <p class="changelog-list">
                                     - <span v-html="formatChange(entry.text)"></span> places on {{ formatDate(entry.date) }}
                                 </p>
                             </div>
                         </template>
-
                     </div>
-
                 </div>
             </div>
             <div class="meta-container">
@@ -183,13 +231,7 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h2><a href="https://docs.google.com/document/d/13Tmtj1G1ydiBz4_banBFvjvMiIXlnpYhOzq-GMohPxs/edit?usp=sharing" target="_blank" style="color: blue; text-decoration: underline;">NARLL Guidelines</a></h2>
-                    <h3>Notes:</h3>
-                    <p>
-                        The NARLL Website is in beta, so expect some stuff to be unfinished or bugged.
-                    </p>
-                    <p>
-                        Want the old spreadsheet version of the list? Here: <a href="https://docs.google.com/spreadsheets/d/1gsfQKeiUm-mlEayo3e4FskkvuFJtIPjF_ad18j9q9XI" target="_blank" style="color: blue; text-decoration: underline;">spreadsheet</a>
+                      <h2><a href="https://docs.google.com/document/d/1_xeCrzN2xmG1X5PQix6BEqDfBCg22rB08TNjXyRXg4M/edit?usp=sharing" target="_blank" style="color: blue; text-decoration: underline;">NARLL Guidelines</a></h2>
                 </div>
             </div>
         </main>
@@ -206,6 +248,20 @@ export default {
         store,
         copied: false,
         search: "",
+        sortBy: "name",
+
+        sortDir: "asc",
+        filters: {
+            creator: "",
+            enjoymentMin: null,
+            enjoymentMax: null,
+            feature: {
+                top: true,
+                featured: true,
+                award: true,
+                none: true,
+            }
+        }
     }),
     computed: {
         recordCountText() {
@@ -216,17 +272,57 @@ export default {
             return this.list[store.selected]?.[0];
         },
         filteredList() {
-            if (!this.search) {
-                return this.list.map((item, i) => [...item, i]);
-            }
-
+            let arr = this.list.map((item, i) => [...item, i]);
             const q = this.search.toLowerCase();
 
-            return this.list
-                .map((item, i) => [...item, i])
-                .filter(([level]) =>
+            if (q) {
+                arr = arr.filter(([level]) =>
                     level?.name?.toLowerCase().includes(q)
                 );
+            }
+
+            if (this.filters.creator) {
+                const c = this.filters.creator.toLowerCase();
+                arr = arr.filter(([level]) =>
+                    level?.creators?.some(x => x.toLowerCase().includes(c))
+                );
+            }
+
+            arr = arr.filter(([level]) => {
+                const e = Number(level?.enjoyment);
+                if (isNaN(e)) return true;
+
+                if (this.filters.enjoymentMin != null && e < this.filters.enjoymentMin) return false;
+                if (this.filters.enjoymentMax != null && e > this.filters.enjoymentMax) return false;
+                return true;
+            });
+
+            arr = arr.filter(([level]) => {
+                const f = level?.featured || "none";
+                if (f === "top") return this.filters.feature.top;
+                if (f === "featured") return this.filters.feature.featured;
+                if (f === "award") return this.filters.feature.award;
+                return this.filters.feature.none;
+            });
+
+
+            const dir = this.sortDir === "asc" ? 1 : -1;
+
+            arr.sort(([a], [b]) => {
+                switch (this.sortBy) {
+                    case "name":
+                        return dir * (a.name || "").localeCompare(b.name || "");
+                    case "enjoyment":
+                        return dir * ((a.enjoyment ?? -1) - (b.enjoyment ?? -1));
+                    case "victors":
+                        return dir * ((a.records?.length ?? 0) - (b.records?.length ?? 0));
+                    case "feature":
+                        return dir * ((a.featured || "").localeCompare(b.featured || ""));
+                }
+                return 0;
+            });
+
+            return arr;
         },
         video() {
             if (!this.level.showcase) {
@@ -291,6 +387,18 @@ export default {
                 .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
                 .replace(/\*(.*?)\*/g, "<i>$1</i>");
         },
+        formatEnjoyment(val) {
+            if (val === null || val === undefined || val === "") return "NA";
+            return val;
+        },
+        enjoymentClass(val) {
+            const n = Number(val);
+            if (isNaN(n)) return "";
+
+            if (n <= 4) return "enjoyment--bad";
+            if (n < 7) return "enjoyment--mid";
+            return "enjoyment--good";
+        }
     },
     watch: {
         search() {

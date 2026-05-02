@@ -5,6 +5,7 @@
   "name": "\u2605 spaceless \u2605",
   "author": "Rosieel",
   "tags": "Cube, Timings",
+  "enjoyment": "7.21",
   "notes": "",
   "creators": [
     "Rosieel"
@@ -85,12 +86,6 @@
       "hz": 0
     },
     {
-      "user": "JohnHuman",
-      "link": "",
-      "percent": 100,
-      "hz": 0
-    },
-    {
       "user": "troof",
       "link": "",
       "percent": 100,
@@ -137,6 +132,19 @@
       "link": "",
       "percent": 100,
       "hz": 0
+    },
+    {
+      "user": "hyacinth",
+      "link": "",
+      "percent": 100,
+      "hz": 0
+    },
+    {
+      "user": "mineraljk",
+      "link": "",
+      "percent": 100,
+      "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

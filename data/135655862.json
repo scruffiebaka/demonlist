@@ -5,6 +5,7 @@
   "name": "Moonlight",
   "author": "Rosieel",
   "tags": "Cube, Timings",
+  "enjoyment": "6.28",
   "notes": "",
   "creators": [
     "Rosieel"
@@ -49,7 +50,7 @@
       "hz": 0
     },
     {
-      "user": "amylova",
+      "user": "amy",
       "link": "",
       "percent": 100,
       "hz": 0
@@ -90,5 +91,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }

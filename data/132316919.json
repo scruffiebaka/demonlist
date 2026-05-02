@@ -4,7 +4,8 @@
   "featured": "",
   "name": "Pink Hell ",
   "author": "srbielmr10",
-  "tags": "Cube",
+  "tags": "Cube, Chokepoints",
+  "enjoyment": "",
   "notes": "",
   "creators": [
     "srbielmr10"
@@ -30,5 +31,6 @@
       "percent": 100,
       "hz": 0
     }
-  ]
+  ],
+  "nong": ""
 }
