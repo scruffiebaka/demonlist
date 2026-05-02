@@ -390,8 +390,10 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.4rem 0.6rem;
+    border: 1px solid #dfdfdf;
     border-radius: 0.6rem;
-    background: var(--color-primary);
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 
     flex-wrap: wrap;
     max-width: 500px;
@@ -440,12 +442,9 @@
     padding: 0 0.7rem;
     border-radius: 0.4rem;
     border: 1px solid #dfdfdf;
-    background: var(--color-primary);
+    background-color: var(--color-background);
+    color: var(--color-on-background);
     cursor: pointer;
-}
-
-.filter-toggle:hover {
-    background: var(--color-primary);
 }
 
 .sort-filter {
