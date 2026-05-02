@@ -241,7 +241,11 @@ export default {
                 arr.sort(([a], [b]) => {
                     switch (this.sortBy) {
                         case "name":
-                            return dir * (a.name || "").localeCompare(b.name || "");
+                            const clean = s => (s || "")
+                                .toLowerCase()
+                                .replace(/[^a-z0-9]/g, "");
+
+                            return dir * clean(a.name).localeCompare(clean(b.name));
                         case "enjoyment":
                             return dir * ((a.enjoyment ?? -1) - (b.enjoyment ?? -1));
                         case "victors":
