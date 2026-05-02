@@ -397,6 +397,7 @@
     flex-wrap: wrap;
     max-width: 500px;
     margin-top: 0.5rem;
+    box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
     animation: fadeSlide 0.2s ease;
 }
 
@@ -408,7 +409,6 @@
     border-radius: 0.4rem;
     border: 1.5px solid #666;
     font-size: 0.85rem;
-    box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
     transition: border 0.15s ease, box-shadow 0.15s ease, transform 100ms ease;
 }
 
@@ -484,7 +484,7 @@
 .sort-filter input,
 .sort-filter select,
 .filter-toggle {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Lexend', sans-serif !important;
 }
 
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
