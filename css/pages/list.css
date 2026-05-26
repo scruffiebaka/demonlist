@@ -548,7 +548,6 @@
 .tag-dropdown summary::before {
     content: "▶";
     font-size: 0.75rem;
-    transition: transform 0.15s ease;
 }
 
 .tag-dropdown[open] summary::before {
