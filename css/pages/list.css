@@ -531,6 +531,30 @@
     margin: 0;
 }
 
+.tag-dropdown summary {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0.5rem;
+}
+
+.tag-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.tag-dropdown summary::before {
+    content: "▶";
+    font-size: 0.75rem;
+    transition: transform 0.15s ease;
+}
+
+.tag-dropdown[open] summary::before {
+    transform: rotate(90deg);
+}
+
 /* scruffie: bruh i have no idea what im doing idek if this works bru" */
 /* scruffie: it appears i have figured it out :333333 */
 /* scrffie: i leave comments everytime i come here and nobody is gonna notice*/
