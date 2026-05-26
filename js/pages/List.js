@@ -57,7 +57,7 @@ export default {
                                 <label
                                     v-for="tag in availableTags"
                                     :key="tag.tag"
-                                    class="tag-option"
+                                    class="tag-chip"
                                 >
                                     <input
                                         type="checkbox"
@@ -65,7 +65,9 @@ export default {
                                         v-model="selectedTags"
                                     >
                         
-                                    {{ tag.tag }} ({{ tag.count }})
+                                    <span>
+                                        {{ tag.tag }} ({{ tag.count }})
+                                    </span>
                                 </label>
                             </div>
                         </details>
