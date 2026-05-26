@@ -48,23 +48,27 @@ export default {
 
                         <button @click="clearFilters">Clear</button>
 
-                        <div class="tag-filter">
-                            <p class="type-title-sm">Tags</p>
+                        <details class="tag-dropdown">
+                            <summary class="type-label-lg">
+                                Tags ({{ selectedTags.length }})
+                            </summary>
                         
-                            <label
-                                v-for="tag in availableTags"
-                                :key="tag.tag"
-                                class="tag-option"
-                            >
-                                <input
-                                    type="checkbox"
-                                    :value="tag.tag"
-                                    v-model="selectedTags"
+                            <div class="tag-filter">
+                                <label
+                                    v-for="tag in availableTags"
+                                    :key="tag.tag"
+                                    class="tag-option"
                                 >
+                                    <input
+                                        type="checkbox"
+                                        :value="tag.tag"
+                                        v-model="selectedTags"
+                                    >
                         
-                                {{ tag.tag }} ({{ tag.count }})
-                            </label>
-                        </div>
+                                    {{ tag.tag }} ({{ tag.count }})
+                                </label>
+                            </div>
+                        </details>
 
                         <input v-model="filters.creator" placeholder="Creator" />
 
