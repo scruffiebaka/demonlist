@@ -194,3 +194,12 @@ export async function fetchPending(){
         return null;
     }
 }
+
+export async function fetchGuidelines() {
+    try {
+        const res = await fetch('/dataextra/guidelines.json');
+        return await res.json();
+    } catch{
+        return null;
+    }
+}

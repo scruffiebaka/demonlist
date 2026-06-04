@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="/css/typography.css" />
         <link rel="stylesheet" type="text/css" href="/css/main.css" />
         <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
+        <link rel="stylesheet" type="text/css" href="/css/pages/guidelines.css" />
         <link
             rel="stylesheet"
             type="text/css"
@@ -60,6 +61,11 @@
                 </router-link>
             </nav>
             <div class="nav__actions">
+
+                <a class="nav__icon" href="/guidelines">
+                    <img src="/assets/discord.svg" alt="Discord Logo" />
+                </a>
+                
                 <button
                     class="nav__icon"
                     @click.prevent="store.toggleDark()"

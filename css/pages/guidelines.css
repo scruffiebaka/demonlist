@@ -1,0 +1,82 @@
+.guidelines-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    gap: 24px;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.guidelines-content {
+    min-width: 0;
+}
+
+.guidelines-hero,
+.guidelines-section {
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.guidelines-subsection {
+    margin-top: 32px;
+}
+
+.guidelines-subsection:first-child {
+    margin-top: 0;
+}
+
+.guidelines-subsection h3 {
+    margin-bottom: 16px;
+}
+
+.guidelines-subsection p {
+    line-height: 1.6;
+}
+
+.guidelines-subsection ul {
+    padding-left: 24px;
+}
+
+.guidelines-subsection li {
+    margin: 8px 0;
+}
+
+.guidelines-toc {
+    position: sticky;
+    top: 24px;
+
+    height: fit-content;
+
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+.guidelines-toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guidelines-toc ul ul {
+    padding-left: 16px;
+}
+
+.guidelines-toc a {
+    text-decoration: none;
+}
+
+.guidelines-toc a.active {
+    font-weight: bold;
+}
