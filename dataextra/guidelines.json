@@ -1,0 +1,69 @@
+{
+  "title": "NARLL Guidelines",
+  "subtitle": "ripped from the Challenge List, rewritten by vex",
+  "lastUpdated": "April 24th, 2026",
+
+  "sections": [
+    {
+      "id": "level-side",
+      "title": "Level Side",
+      "children": [
+        {
+          "id": "gameplay-restrictions",
+          "title": "Gameplay Restrictions",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "In order to help us accurately rank the levels on the list, the NARLL has some extra gameplay restrictions in place."
+            },
+            {
+              "type": "paragraph",
+              "text": "First, all levels submitted to the NARLL must have at least 5 seconds of gameplay. Said gameplay also must be at least somewhat creative..."
+            },
+            {
+              "type": "paragraph",
+              "text": "Second, levels with microclicks and microreleases that make the level substantially harder on some hardware are not allowed."
+            }
+          ]
+        },
+
+        {
+          "id": "copying-permission",
+          "title": "Level Copying/Permission",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Some levels are made by copying (parts of) other levels. Information on when these are allowed can be seen below."
+            },
+
+            {
+              "type": "heading",
+              "text": "In all cases:"
+            },
+
+            {
+              "type": "list",
+              "items": [
+                "If the original level was made by someone else, you must have their explicit permission for the level to be placed.",
+                "The original creator always has the right to retract their permission, and the level will be removed if they choose to do so."
+              ]
+            },
+
+            {
+              "type": "heading",
+              "text": "If the level copies (parts of) another level:"
+            },
+
+            {
+              "type": "list",
+              "items": [
+                "If the level is sufficiently different from the original part, it may place with explicit permission from the original creator.",
+                "If beating the original level does provide a significant advantage, and the original level is on NARLL itself, the new level will replace the old one if and only if the new level is harder and most victors agree to get it replaced."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
