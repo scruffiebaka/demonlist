@@ -1,6 +1,5 @@
 import { fetchLeaderboard, fetchCreators, fetchUsers } from "../content.js";
 import { localize } from "../util.js";
-import users from "../../dataextra/users.json";
 import Spinner from "../components/Spinner.js";
 
 function computeRanks(arr, key) {
