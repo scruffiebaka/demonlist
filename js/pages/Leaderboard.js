@@ -79,22 +79,20 @@ export default {
                             </td>
 
                             <td class="user" :class="{ 'active': selected == i }">
-                                <button @click="selected = i">
-                                    <div class="user-info">
-                                        <button @click="selected = i">
-                                            <span class="type-label-lg">{{ ientry.user }}</span>
-                                        </button>
+                                <div class="user-row">
+                                    <button @click="selected = i">
+                                        <span class="type-label-lg">{{ ientry.user }}</span>
+                                    </button>
 
-                                        <div class="flag-container">
-                                            <img
-                                                v-for="flag in ientry.flags.slice(0, 3)"
-                                                :key="flag"
-                                                class="flag"
-                                                :src="'/assets/flags/' + flag + '.svg'"
-                                            >
-                                        </div>
+                                    <div class="flag-container">
+                                        <img
+                                            v-for="flag in ientry.flags.slice(0, 3)"
+                                            :key="flag"
+                                            class="flag"
+                                            :src="'/assets/flags/' + flag + '.svg'"
+                                        >
                                     </div>
-                                </button>
+                                </div>
                             </td>
                         </tr>
                     </table>

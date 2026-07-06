@@ -159,18 +159,28 @@
     cursor: pointer;
 }
 
-.flag-container {
-    margin-left: auto;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
 .flag {
     width: 18px;
     height: 18px;
 }
 
+.user-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user-row button {
+    flex: 1;
+    text-align: left;
+}
+
+.flag-container {
+    display: flex;
+    gap: 4px;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
 /*scruffie: i figured shit out!!! :333333*/
 /*scruffie was here*/
 /*secret scruffie note: its been days. im locked in molds basement. hes held my family captive. somebody help. PLEASE.*/
