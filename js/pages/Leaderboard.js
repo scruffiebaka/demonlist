@@ -87,7 +87,7 @@ export default {
                                         v-for="flag in ientry.flags"
                                        :key="flag"
                                        class="flag"
-                                       :src="'/flags/' + flag + '.svg'"
+                                       :src="'/assets/flags/' + flag + '.svg'"
                                        :alt="flag"
                                       >
                                    </div>
