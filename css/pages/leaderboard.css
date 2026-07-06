@@ -150,24 +150,25 @@
 .user-info {
     display: flex;
     align-items: center;
-    gap: 4px;
+    width: 100%;
 }
 
-.player-name {
+.user-info button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.flag-container {
+    margin-left: auto;
     display: flex;
+    gap: 4px;
     align-items: center;
-    gap: 6px;
 }
 
 .flag {
     width: 18px;
     height: 18px;
-    object-fit: contain;
-}
-
-.flag.large {
-    width: 24px;
-    height: 24px;
 }
 
 /*scruffie: i figured shit out!!! :333333*/

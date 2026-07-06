@@ -81,16 +81,19 @@ export default {
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
                                     <div class="user-info">
-                                     <span class="type-label-lg">{{ ientry.user }}</span>
+                                        <button @click="selected = i">
+                                            <span class="type-label-lg">{{ ientry.user }}</span>
+                                        </button>
 
-                                     <img
-                                        v-for="flag in ientry.flags"
-                                       :key="flag"
-                                       class="flag"
-                                       :src="'/assets/flags/' + flag + '.svg'"
-                                       :alt="flag"
-                                      >
-                                   </div>
+                                        <div class="flag-container">
+                                            <img
+                                                v-for="flag in ientry.flags.slice(0, 3)"
+                                                :key="flag"
+                                                class="flag"
+                                                :src="'/assets/flags/' + flag + '.svg'"
+                                            >
+                                        </div>
+                                    </div>
                                 </button>
                             </td>
                         </tr>
@@ -104,15 +107,15 @@ export default {
                             #{{ selected + 1 }}
                             <div class="player-name">
                                 <span>{{ mode === 'list' ? entry.user : creator.user }}</span>
-                                      <img
-                                          v-for="flag in (mode === 'list'
-                                               ? entry.flags
-                                               : creator.flags).slice(0, 3)"
-                                              :key="flag"
-                                              class="flag large"
-                                              :src="'/flags/' + flag + '.svg'"
-                                              :alt="flag"
-                                     >
+                                    <img
+                                        v-for="flag in (mode === 'list'
+                                            ? entry.flags
+                                            : creator.flags)"
+                                            :key="flag"
+                                            class="flag large"
+                                            :src="'/assets/flags/' + flag + '.svg'"
+                                            :alt="flag"
+                                    >
                             </div>
                         </h1>
 
