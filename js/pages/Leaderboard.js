@@ -1,4 +1,4 @@
-import { fetchLeaderboard, fetchCreators } from "../content.js";
+import { fetchLeaderboard, fetchCreators, fetchUsers } from "../content.js";
 import { localize } from "../util.js";
 import users from "../../dataextra/users.json";
 import Spinner from "../components/Spinner.js";
@@ -182,6 +182,8 @@ export default {
     },
 
     async mounted() {
+	const users = await fetchUsers();
+
         const [leaderboard, err] = await fetchLeaderboard();
         this.err = err;
 
@@ -190,16 +192,18 @@ export default {
             "total"
         ).map(player => ({
             ...player,
-            ...(players[player.user] ?? {}),
-            flags: players[player.user]?.flags ?? []
-        }));
+            flags: users[player.user]?.flags ?? []
+       }));
 
         const creators = await fetchCreators();
 
         this.creators = computeRanks(
             (creators || []).sort((a, b) => b.points - a.points),
             "points"
-        );
+        ).map(player => ({
+             ...player,
+             flags: users[player.user]?.flags ?? []
+        }));
 
         this.loading = false;
     }
