@@ -147,6 +147,29 @@
     color: var(--color-on-primary);
 }
 
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.player-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.flag {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.flag.large {
+    width: 24px;
+    height: 24px;
+}
+
 /*scruffie: i figured shit out!!! :333333*/
 /*scruffie was here*/
 /*secret scruffie note: its been days. im locked in molds basement. hes held my family captive. somebody help. PLEASE.*/

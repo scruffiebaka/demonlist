@@ -1,5 +1,6 @@
 import { fetchLeaderboard, fetchCreators } from "../content.js";
 import { localize } from "../util.js";
+import users from "../../dataextra/users.json";
 import Spinner from "../components/Spinner.js";
 
 function computeRanks(arr, key) {
@@ -80,7 +81,17 @@ export default {
 
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
-                                    <span class="type-label-lg">{{ ientry.user }}</span>
+                                    <div class="user-info">
+                                     <span class="type-label-lg">{{ ientry.user }}</span>
+
+                                     <img
+                                        v-for="flag in ientry.flags"
+                                       :key="flag"
+                                       class="flag"
+                                       :src="'/flags/' + flag + '.svg'"
+                                       :alt="flag"
+                                      >
+                                   </div>
                                 </button>
                             </td>
                         </tr>
@@ -92,7 +103,18 @@ export default {
 
                         <h1>
                             #{{ selected + 1 }}
-                            {{ mode === 'list' ? entry.user : creator.user }}
+                            <div class="player-name">
+                                <span>{{ mode === 'list' ? entry.user : creator.user }}</span>
+                                      <img
+                                          v-for="flag in (mode === 'list'
+                                               ? entry.flags
+                                               : creator.flags).slice(0, 3)"
+                                              :key="flag"
+                                              class="flag large"
+                                              :src="'/flags/' + flag + '.svg'"
+                                              :alt="flag"
+                                     >
+                            </div>
                         </h1>
 
                         <h3>
@@ -166,7 +188,11 @@ export default {
         this.leaderboard = computeRanks(
             leaderboard.sort((a, b) => b.total - a.total),
             "total"
-        );
+        ).map(player => ({
+            ...player,
+            ...(players[player.user] ?? {}),
+            flags: players[player.user]?.flags ?? []
+        }));
 
         const creators = await fetchCreators();
 
